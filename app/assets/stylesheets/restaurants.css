@@ -1,0 +1,14 @@
+header{
+  background-color: red;
+  height: 120px;
+}
+
+main{
+  height: calc(100vh - 170px);
+  background-color: blue;
+}
+
+footer{
+  height: 50px;
+  background-color:red;
+}
