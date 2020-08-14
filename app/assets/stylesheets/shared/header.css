@@ -65,7 +65,7 @@
 .category-list:before {
   content: "";
   position: absolute;
-  background: #d5eef7;
+  background: #ffa014;
   width: 40px;
   height: 40px;
   border-radius: 50%;
