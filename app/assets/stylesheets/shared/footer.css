@@ -1,0 +1,13 @@
+footer{
+  height: 50px;
+  background-color:#faf8f5;
+  position: relative;
+}
+
+footer p{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
