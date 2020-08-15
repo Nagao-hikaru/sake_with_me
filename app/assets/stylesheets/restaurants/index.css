@@ -1,5 +1,5 @@
 .main{
-  height: (100% - 780px);
+  height: calc(100% - 780px);
   margin: 0 auto;
 }
 
