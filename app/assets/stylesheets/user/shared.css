@@ -1,0 +1,139 @@
+.login{
+  padding: 10px;
+}
+
+.login a{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.login a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.login a:hover::after{
+  width: 100%;
+}
+
+.sign-up{
+  padding: 10px;
+}
+
+.sign-up a{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.sign-up a::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.sign-up a:hover::after{
+  width: 100%;
+}
+
+.confirmation-email{
+  padding:  10px;
+}
+
+.confirmation-email a{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.confirmation-email a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.confirmation-email a:hover::after{
+  width: 100%;
+}
+
+.forgot-password{
+  padding: 10px;
+}
+
+.forgot-password a{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.forgot-password a::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.forgot-password a:hover::after{
+  width: 100%;
+}
+
+.error-explation{
+  padding-top: 50px;
+}
+
+.error-explation h2{
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.error-explation ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  background: rgba(255,255,255,0.2);
+}

@@ -1,0 +1,129 @@
+.devise-body{
+  background-image: url("/images/header6.png");
+  background-size: cover;
+}
+
+.devise-main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid black;
+}
+
+.form-header-text{
+  text-align: center;
+}
+
+.form-wrap{
+  width: 50%;
+  /* background-color: orange; */
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-content{
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-header-text{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  border-bottom: 1px solid #001100;
+}
+
+.field{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.form-text{
+  font-size: 16px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 15px;
+}
+
+.input-default{
+  width: 100%;
+  color: black;
+  margin-top: 5px;
+  height: 40px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.submit-btn{
+  margin: 10px 0;
+  background-color:#147aff;
+  width: 50%;
+  border-radius: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 3px 12px;
+  color: #ffffff;
+  opacity: 1;
+  transition: 0.3s;
+  box-shadow: 6px 6px 3px #666666;
+  border: 2px solid #147aff;
+}
+
+.root-top{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  margin-bottom: 10px;
+}
+
+.root-top::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.root-top:hover::after{
+  width: 100%;
+}
+
+.form-check-box{
+  margin-top: 10px;
+}
+
+.form-check-box[type=checkbox] {
+  transform: scale(1.6);
+}
+
+/* .submit:hover{
+} */

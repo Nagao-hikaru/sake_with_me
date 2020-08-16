@@ -1,0 +1,5 @@
+<p>ご登録ありがとうございます。<%= @email %>!</p>
+
+<p>下記リンクからユーザー登録を完了してください</p>
+
+<p><%= link_to 'ユーザー登録を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
