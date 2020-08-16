@@ -1,0 +1,29 @@
+<div class="devise-body">
+  <div class="devise-main">
+    <%= form_with model: @user, url: user_confirmation_path, class: 'devise-content', local: true do |f| %>
+
+    <div class="form-wrap">
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <h1 class="form-header-text">確認メールの再送信</h1>
+
+      <div class="field">
+        <%= f.label :email, class: 'form-text' %>
+        <%= f.email_field :email, placeholder: 'PC,携帯どちらでも可', autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'input-default' %>
+      </div>
+
+      <div class="field">
+        <%= f.submit "送信", class: 'submit-btn', id: 'submit' %>
+      </div>
+    <%= render "devise/shared/links" %>
+
+    <%= link_to 'トップページ', "/", class: "root-top"%>
+    
+    </div>
+    <% end %>
+    
+  </div>
+
+</div>
+
+
+

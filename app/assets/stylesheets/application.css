@@ -17,3 +17,14 @@
  *{
    box-sizing: border-box;
  }
+
+ .notice{
+   background-color: #EEEEEE;
+   text-align: center;
+ }
+
+ .alert{
+   background-color: #EEEEEE;
+   text-align: center;
+ }
+
