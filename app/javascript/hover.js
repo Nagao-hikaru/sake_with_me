@@ -1,6 +1,7 @@
 window.addEventListener('load', function(){
   const hoverList = document.getElementsByClassName("users")
   const hoverLists = Array.from(hoverList)
+  const submitButton = document.getElementById("submit")
 
     hoverLists.forEach(function(target){
 
@@ -11,6 +12,14 @@ window.addEventListener('load', function(){
       target.addEventListener('mouseout', function(){
         target.removeAttribute("style", "background-color:#EEEEEE;")
       })
+    })
+
+    submitButton.addEventListener('mouseover', function(){
+      submitButton.setAttribute("style", "box-shadow :none; color :#000066; background :#ffffff;" )
+    })
+
+    submitButton.addEventListener('mouseout', function(){
+      submitButton.removeAttribute("style", "box-shadow :none; color :#000066; background :#ffffff;")
     })
 
 })
