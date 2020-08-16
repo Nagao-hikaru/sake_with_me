@@ -89,7 +89,19 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'sake-with-me.herokuapp.com' 
+  config.action_mailer.default_url_options = { :host => 'sake-with-me.herokuapp.com' } 
+
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    # :user_name => Settings.gmail:[:user_name], #gmailアドレス
+    # :password => Settings.gmail:[:password], #gmailパスワード
+    :user_name => ENV['GMAIL_USER'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :authentication => 'login',
+  }
 
   
 
