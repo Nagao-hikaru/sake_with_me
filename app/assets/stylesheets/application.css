@@ -17,3 +17,9 @@
  *{
    box-sizing: border-box;
  }
+
+ .notice .alert{
+   background-color: #EEEEEE;
+   text-align: center;
+ }
+
