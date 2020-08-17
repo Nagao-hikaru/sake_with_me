@@ -15,7 +15,6 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to root_path, notice: '投稿に成功しました。'
     else
-      binding.pry
       flash[:alert] = "全項目記述してください"
       render :new
     end

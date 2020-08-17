@@ -2,7 +2,9 @@
   <div class="devise-main">
     <%= form_with model: @restaurant, class: 'devise-content', local: true do |f| %>
 
+
     <div class="form-wrap">
+      <%= render "shared/error_messages", model: f.object %>
 
       <h1 class="form-header-text">飲食店情報入力</h1>
 
