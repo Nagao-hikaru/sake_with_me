@@ -67,3 +67,5 @@ gem 'config'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
+
+gem 'active_hash'
