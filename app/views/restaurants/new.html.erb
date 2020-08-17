@@ -1,1 +1,30 @@
-aaaaaaaaaa
+
+<%= form_with model: @restaurant, local: true do |f| %>
+
+<%= f.label :image%>
+<%= f.file_field :image%>
+
+<%= f.label :name%>
+<%= f.text_area :name, placeholder:"飲食店名を入力してください"%>
+
+<%= f.label :beer%>
+<%= f.text_area :beer, placeholder:"生ビール名を入力してください"%>
+
+<%= f.label :genre_id%>
+<%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {}) %>
+
+<%= f.label :prefecture_id%>
+<%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %>
+
+<%= f.label :city%>
+<%= f.text_area :city%>
+
+<%= f.label :address%>
+<%= f.text_area :address%>
+
+<%= f.submit "投稿する", class:'submit-btn', id: 'submit'%>
+
+
+
+<%= %>
+<% end %>

@@ -1,4 +1,8 @@
 class RestaurantsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:new]
+
+
   def index
   end
 
@@ -8,7 +12,9 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if @restaurnt.create
+    binding.pry
+    if @restaurant.save
+      binding.pry
       redirect_to root_path, notice: '投稿に成功しました。'
     else
       flash[:alert] = "全項目記述してください"
@@ -21,6 +27,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
+    binding.pry
     params.require(:restaurant).permit(:name, :image, :beer, :genre_id, :prefecture_id, :city, :address).merge(user_id: current_user.id)
   end
 end
