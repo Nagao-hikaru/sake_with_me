@@ -1,6 +1,6 @@
 class Genre < ActiveHash::Base
   self.data = [
-    { id: 1, name: '__' },
+    { id: 1, name: '---' },
     { id: 2, name: '居酒屋'},
     { id: 3, name: '和食'},
     { id: 4, name: '天ぷら'},

@@ -56,3 +56,7 @@
 }
 
 
+.restaurant-body{
+  background-image: url("/images/header7.png");
+  background-size: cover;
+}
