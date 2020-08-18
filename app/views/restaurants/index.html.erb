@@ -3,156 +3,38 @@
     <%= render partial: "shared/header" %>
     <main>
       <ul class="main-body">
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
+        <% @restaurants.each do |restaurant|%>
+          <li class="restaurant-list">
+            <%= link_to "#", class: 'detail-restaurant' do %>
+              <div class="restaurant-name">
+                <p class="restaurant-title"><span><%= restaurant.name%></span></p>
               </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
+              <div class="detail">
+                <div class= "detail-left">
+                  <%= image_tag restaurant.image.variant(resize:'240x280').processed, class: 'img-restaurant'%>
+                </div>
+                <ul class="detail-right">
+                  <li class="genre">
+                    <p class="genre-list">業態</p>
+                    <p class="genre-name"><%= restaurant.genre.name%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">生ビール</p>
+                    <p class="genre-name"><%= restaurant.beer%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">都道府県</p>
+                    <p class="genre-name"><%= restaurant.prefecture.name%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">投稿者</p>
+                    <p class="genre-name"><%= restaurant.user.name%></p>
+                  </li>
+                </ul>
               </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
-              </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
-              </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
-              </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
-        <li class="restaurant-list">
-          <%= link_to "#", class: 'detail-restaurant' do %>
-            <div class="restaurant-name">
-              <p>店の名前</p>
-            </div>
-            <div class="detail">
-              <div class= "detail-left">
-                  <img src="" alt="">
-              </div>
-              <ul class="detail-right">
-                <li class="genre">
-                  <p>店の種類</p>
-                </li>
-                <li class="genre">
-                  <p>生ビール</p>
-                </li>
-                <li class="genre">
-                  <p>都道府県</p>
-                </li>
-                <li class="genre">
-                  <p>投稿者</p>
-                </li>
-              </ul>
-            </div>
-          <% end %>
+            <% end %>
+          </li>
+        <%end%>
       </ul>
     </main>
     <%= render partial: "shared/footer" %>

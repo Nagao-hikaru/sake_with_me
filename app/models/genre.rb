@@ -6,15 +6,16 @@ class Genre < ActiveHash::Base
     { id: 4, name: '天ぷら'},
     { id: 5, name: '焼肉'},
     { id: 6, name: '寿司'},
-    { id: 7, name: '蕎麦'},
-    { id: 8, name: 'うどん'},
-    { id: 9, name: '串揚げ'},
-    { id: 10, name: '中華料理'},
-    { id: 11, name: '焼き鳥'},
-    { id: 12, name: 'お好み焼き、たこ焼き'},
-    { id: 13, name: '鍋'},
-    { id: 14, name: '洋食'},
-    { id: 15, name: 'イタリアン'},
-    { id: 16, name: 'ラーメン'}
+    { id: 7, name: '立ち呑み'},
+    { id: 8, name: '蕎麦'},
+    { id: 9, name: 'うどん'},
+    { id: 10, name: '串揚げ'},
+    { id: 11, name: '中華料理'},
+    { id: 12, name: '焼き鳥'},
+    { id: 13, name: 'お好み焼き、たこ焼き'},
+    { id: 14, name: '鍋'},
+    { id: 15, name: '洋食'},
+    { id: 16, name: 'イタリアン'},
+    { id: 17, name: 'ラーメン'}
   ]
 end

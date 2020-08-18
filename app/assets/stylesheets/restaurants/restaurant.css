@@ -12,47 +12,90 @@
 
 
 .restaurant-list{
-  height: 370px;
-  width: 780px;
-  background-color:#EEEEEE;
+  height: 390px;
+  width: 600px;
   margin: 30px 10px;
-  display: flex;
+  /* display: flex; */
+  background: white;
+  border-top: solid 5px #ffa014;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
 .detail-restaurant{
   width: 100%;
   text-decoration: none;
+  display: inline-block;
 }
 
 .restaurant-name{
-  height: 90px;
-  /* background-color: lime; */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #404040;
+  border-left: solid 6px #ffa014;
+  border-bottom: solid 1px #dadada;
+  background: whitesmoke;
+  padding: 0.5em;
+  font-weight: bold;
 }
+
 
 .detail{
   display: flex;
+  height: 280px;
 }
 
 .detail-left{
-  width: 60%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  margin-left: 10px;
 }
 
+.img-restaurant{
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 .detail-right{
-  width: 40%;
+  width: 300px;
   height: 280px;
-  background-color:honeydew;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .genre{
-  margin: 10px 0px;
   text-align: center;
   color: black;
+  width: 100%;
+}
+
+.genre-list{
+  margin-top: 5px;
+  font-size: 13px;
 }
 
 .genre-name{
-  font-size: 20px;;
+  color: #404040;
+  border-left: solid 6px #ffa014;/*左側の線*/
+  border-bottom: solid 1px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin: 5px 5px 0;
+  padding: 0.5em;
+  font-weight: bold;
 }
 
 
