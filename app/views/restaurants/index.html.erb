@@ -1,11 +1,10 @@
-<div class="aaa">
-  <div class="bbb">
+
     <%= render partial: "shared/header" %>
     <main>
       <ul class="main-body">
         <% @restaurants.each do |restaurant|%>
           <li class="restaurant-list">
-            <%= link_to "#", class: 'detail-restaurant' do %>
+            <%= link_to restaurant_path(restaurant), class: 'detail-restaurant' do %>
               <div class="restaurant-name">
                 <p class="restaurant-title"><span><%= restaurant.name%></span></p>
               </div>
@@ -38,5 +37,3 @@
       </ul>
     </main>
     <%= render partial: "shared/footer" %>
-  </div>
-</div>

@@ -1,0 +1,58 @@
+<%= render partial: "shared/header2"%>
+
+<main>
+  <div class="show-main">
+    <div class="show-content">
+      <h2 class="show-name"><%= @restaurant.name%></h2>
+      <div class="img-content">
+        <%= image_tag @restaurant.image, class: 'img-restaurant'%>
+      </div>
+
+        <div class="edit-delete-btn">
+          <div class="edit">
+            <%= link_to "#", class: 'edit-btn' do%>
+              <span>飲食店編集</span>
+            <% end %>
+          </div>
+          <div class="delete">
+            <%= link_to "#", class: 'delete-btn' do%>
+              <span>削除</span>
+            <% end %>
+          </div>
+        </div>
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-restaurant">投稿者</th>
+            <td class="detail-value"><%= @restaurant.user.name%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">業態</th>
+            <td class="detail-value"><%= @restaurant.genre.name%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">生ビール</th>
+            <td class="detail-value"><%= @restaurant.beer%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">都道府県</th>
+            <td class="detail-value"><%= @restaurant.prefecture.name%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">住所</th>
+            <td class="detail-value"><%= @restaurant.city%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">番地</th>
+            <td class="detail-value"><%= @restaurant.address%></td>
+          </tr>
+         
+        </tbody>
+      </table>
+      <div class="sake-lists">ここに日本酒一覧</div>
+    </div>
+  </div>
+</main>
+
+<%= render partial: 'shared/footer'%>
