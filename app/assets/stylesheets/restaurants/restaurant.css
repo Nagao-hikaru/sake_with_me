@@ -28,6 +28,8 @@ main{
 }
 
 .restaurant-name{
+  position: relative;
+  translate: 1s;
   height: 80px;
   display: flex;
   align-items: center;
@@ -43,7 +45,29 @@ main{
   background: whitesmoke;
   padding: 0.5em;
   font-weight: bold;
+  transform:5s;
 }
+
+.restaurant-name span::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+
+.restaurant-name:hover {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  background-color: #f8be67 ;
+  opacity: 0.5;
+}
+
 
 
 .detail{
