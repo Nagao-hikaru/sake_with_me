@@ -8,7 +8,7 @@
         <%= image_tag @restaurant.image, class: 'img-restaurant'%>
       </div>
 
-        <% if current_user == @restaurant.user.id%>
+        <% if current_user == @restaurant.user%>
 
           <div class="edit-delete-btn">
             <div class="edit">

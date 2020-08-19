@@ -59,7 +59,7 @@ class RestaurantsController < ApplicationController
 
   def forbit_restaurant
     @restaurant = Restaurant.find(params[:id])
-    if current_user != @restaurant.user.id
+    if current_user != @restaurant.user
       redirect_to restaurant_path(@restaurant.id), notice: '投稿者のみ編集,削除できます。'
     end
   end

@@ -6,8 +6,9 @@
           <li class="restaurant-list">
             <%= link_to restaurant_path(restaurant), class: 'detail-restaurant' do %>
               <div class="restaurant-name">
-                <p class="restaurant-title"><span><%= restaurant.name%></span></p>
-              </div>
+                <span><%= restaurant.name %></span>
+                </div>
+       
               <div class="detail">
                 <div class= "detail-left">
                   <%= image_tag restaurant.image.variant(resize:'240x280').processed, class: 'img-restaurant'%>
