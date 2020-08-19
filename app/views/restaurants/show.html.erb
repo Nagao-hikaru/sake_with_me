@@ -8,18 +8,22 @@
         <%= image_tag @restaurant.image, class: 'img-restaurant'%>
       </div>
 
-        <div class="edit-delete-btn">
-          <div class="edit">
-            <%= link_to "#", class: 'edit-btn' do%>
-              <span>飲食店編集</span>
-            <% end %>
+        <% if current_user == @restaurant.user.id%>
+
+          <div class="edit-delete-btn">
+            <div class="edit">
+              <%= link_to edit_restaurant_path(@restaurant), class: 'edit-btn' do%>
+                <span>飲食店編集</span>
+              <% end %>
+            </div>
+            <div class="delete">
+              <%= link_to restaurant_path, method: :delete, class: 'delete-btn' do%>
+                <span>削除</span>
+              <% end %>
+            </div>
           </div>
-          <div class="delete">
-            <%= link_to "#", class: 'delete-btn' do%>
-              <span>削除</span>
-            <% end %>
-          </div>
-        </div>
+
+        <% end %>
 
       <table class="detail-table">
         <tbody>
