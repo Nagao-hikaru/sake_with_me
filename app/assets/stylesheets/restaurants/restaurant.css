@@ -1,0 +1,339 @@
+main{
+  height: calc(100% - 780px);
+  margin: 0 auto;
+}
+
+.main-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.restaurant-list{
+  height: 390px;
+  width: 600px;
+  margin: 30px 10px;
+  /* display: flex; */
+  background: white;
+  border-top: solid 5px #ffa014;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.detail-restaurant{
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.restaurant-name{
+  position: relative;
+  translate: 1s;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #404040;
+  border-left: solid 6px #ffa014;
+  border-bottom: solid 1px #dadada;
+  background: whitesmoke;
+  padding: 0.5em;
+  font-weight: bold;
+  transform:5s;
+}
+
+.restaurant-name span::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #147aff;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+
+.restaurant-name:hover {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  background-color: #f8be67 ;
+  opacity: 0.5;
+}
+
+
+
+.detail{
+  display: flex;
+  height: 280px;
+}
+
+.detail-left{
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  margin-left: 10px;
+}
+
+.img-restaurant{
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.detail-right{
+  width: 300px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.genre{
+  text-align: center;
+  color: black;
+  width: 100%;
+}
+
+.genre-list{
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.genre-name{
+  color: #404040;
+  border-left: solid 6px #ffa014;/*左側の線*/
+  border-bottom: solid 1px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin: 5px 5px 0;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+
+.restaurant-body{
+  background-image: url("/images/header7.png");
+  background-size: cover;
+}
+
+.form-error-messages{
+  color: red;
+  padding: 8px 0px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  background: rgba(255,255,255,0.4);
+}
+
+.image-default{
+  width: 100%;
+  color: black;
+  margin-top: 5px;
+  height: 40px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* ここからしたがshowアクション */
+
+.show-main{
+  margin: 10px 0px;
+  width: 100vw;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+
+}
+
+.show-content{
+  width: 70vw;
+  background-color: white;
+  /* background-color: blueviolet; */
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-name{
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.img-content{
+  position: relative;
+  height: 618px;
+  width: 618px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.img-restaurant{
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  /* width: 60vw; */
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.detail-table{
+  margin-bottom: 50px;
+  width: 618px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.detail-restaurant{
+  background-color: #f8f8f5;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  border-bottom:  4px solid #ffa014;
+  text-align:left;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.detail-value{
+  width: 80%;
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 10px;
+}
+
+.edit-btn{
+  text-align: center;
+  width: 230px;
+  position: relative;
+  display: inline-block;
+  padding: 16px 32px;
+  border: 2px solid #e41313;
+  background: #e41313;
+  border-radius: 4px;
+  color: #e41313;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.9em;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+.edit-btn span{
+  position: relative;
+  z-index: 1;
+}
+
+.edit-btn::before,
+.edit-btn:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 51%;
+  height: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  background: #ffffff;
+}
+
+.edit-btn::before {
+  left: 0;
+}
+
+.edit-btn::after {
+  right: 0;
+}
+
+.edit-btn:hover::before,
+.edit-btn:hover::after {
+  width: 0;
+  background: #ffffff;
+}
+
+.edit-btn:hover {
+  color: #ffffff;
+}
+
+.delete-btn{
+  text-align: center;
+  width: 190px;
+  position: relative;
+  display: inline-block;
+  padding: 16px 32px;
+  border: 2px solid rgb(163, 159, 159);
+  background: rgb(163, 159, 159);
+  border-radius: 4px;
+  color: rgb(163, 159, 159);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.9em;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+.delete-btn span{
+  position: relative;
+  z-index: 1;
+}
+
+.delete-btn::before,
+.delete-btn:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 51%;
+  height: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  background: #ffffff;
+}
+
+.delete-btn::before {
+  left: 0;
+}
+
+.delete-btn::after {
+  right: 0;
+}
+
+.delete-btn:hover::before,
+.delete-btn:hover::after {
+  width: 0;
+  background: #ffffff;
+}
+
+.delete-btn:hover {
+  color: #ffffff;
+}
+
+.edit-delete-btn{
+  margin: 25px 0;
+  width: 618px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -130,10 +130,11 @@
 }
 
 .error-explation ul{
+  color: red;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   font-size: 13px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.4);
 }
