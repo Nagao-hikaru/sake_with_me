@@ -6,13 +6,12 @@ class Sake < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :nema
+    validates :name
     validates :rice_rate
     validates :sake_degree
     validates :type
     validates :degree
     validates :company
-    validates :rice
   end
 
   with_options numericality: { other_than: 1, message: 'を選択してください'} do
