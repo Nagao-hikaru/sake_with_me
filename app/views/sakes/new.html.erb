@@ -1,0 +1,63 @@
+<div class="sake-body">
+  <div class="devise-main">
+    <%= form_with model: @sake, class: 'devise-content', local: true do |f| %>
+
+
+    <div class="form-wrap">
+      <%= render "shared/error_messages", model: f.object %>
+
+      <h1 class="form-header-text">日本酒情報入力</h1>
+
+      <div class="field">
+        <%= f.label :image, '日本酒の画像', class: 'form-text'%>
+        <%= f.file_field :image, class: 'image-default' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :name, "日本酒名", class: 'form-text'%>
+        <%= f.text_area :name, placeholder:"日本酒名を入力してください", class: 'input-default'%>
+      </div>
+
+      <div class="field">
+        <%= f.label :rice_rate, "精米歩合", class: 'form-text'%>
+        <%= f.text_area :rice_rate, placeholder:"日本酒度を入力してください", class: 'input-default'%>
+      </div>
+      <div class="field">
+        <%= f.label :sake_degree, "日本酒度", class: 'form-text'%>
+        <%= f.text_area :sake_degree, placeholder:"日本酒度を入力してください", class: 'input-default'%>
+      </div>
+
+      <div class="field">
+        <%= f.label :type_id, "種類", class: 'form-text'%>
+        <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class: 'input-default'}) %>
+      </div>
+
+      <div class="field">
+        <%= f.label :degree, 'アルコール度数', class: 'form-text' %>
+        <%= f.text_area :degree, placeholder:'アルコール度数を入力してください', class: 'input-default'%>
+      </div>
+
+      <div class="field">
+        <%= f.label :company, '酒蔵', class: 'form-text' %>
+        <%= f.text_area :company, placeholder: '酒造会社を入力してください', class: 'input-default'%>
+      </div>
+
+      <div class="field">
+        <%= f.label :rice, '使用米', class: 'form-text' %>
+        <%= f.text_area :rice, placeholder: '使用米を入力してください', class: 'input-default'%>
+      </div>
+
+      <div class="field">
+        <%= f.submit "投稿する", class:'submit-btn', id: 'submit'%>
+      </div>
+
+      <%= link_to 'トップページ', "/", class: 'root-top'%>
+
+    </div>
+
+
+
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+
+    <%= render partial: "shared/header3" %>
+    <main>
+      <ul class="main-body">
+        <% @sakes.each do |sake|%>
+          <li class="restaurant-list">
+            <%= link_to sake_path(sake), class: 'detail-restaurant' do %>
+              <div class="restaurant-name">
+                <span><%= sake.name %></span>
+                </div>
+       
+              <div class="detail">
+                <div class= "detail-left">
+                  <%= image_tag sake.image.variant(resize:'300X300'), class: 'img-restaurant'%>
+                </div>
+                <ul class="detail-right">
+                  <li class="genre">
+                    <p class="genre-list">種類</p>
+                    <p class="genre-name"><%= sake.type.name%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">日本酒度</p>
+                    <p class="genre-name"><%= sake.sake_degree%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">酒蔵</p>
+                    <p class="genre-name"><%= sake.company%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">投稿者</p>
+                    <p class="genre-name"><%= sake.user.name%></p>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </li>
+        <%end%>
+      </ul>
+    </main>
+    <%= render partial: "shared/footer" %>

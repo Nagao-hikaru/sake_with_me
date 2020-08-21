@@ -1,6 +1,7 @@
 .devise-body{
   background-image: url("/images/header6.png");
   background-size: cover;
+  padding: 50px 0;
 }
 
 .devise-main{
@@ -43,7 +44,7 @@
   -moz-osx-font-smoothing: grayscale;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 15px;
   border-bottom: 1px solid #001100;
 }
 
@@ -56,17 +57,17 @@
 }
 
 .form-text{
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 15px;
+  padding-top: 11px;
 }
 
 .input-default{
   width: 100%;
   color: black;
-  margin-top: 5px;
+  margin-top: 4px;
   height: 40px;
   padding: 10px 16px 8px;
   border-radius: 4px;
