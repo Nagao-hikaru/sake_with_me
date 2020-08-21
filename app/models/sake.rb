@@ -4,12 +4,9 @@ class Sake < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-
   # DEGREE_REGEX = /\A([1-9]\d*|0)\z/
-  SAKE_DEGREE_REGEX = /\A[+-]/
-  RICE_RATE_REGEX = /[%]\z/
-  
-  
+  SAKE_DEGREE_REGEX = /\A[+-]/.freeze
+  RICE_RATE_REGEX = /[%]\z/.freeze
 
   with_options presence: true do
     validates :image
@@ -21,14 +18,13 @@ class Sake < ApplicationRecord
     validates :company
   end
 
-  validates :sake_degree, format: { with: SAKE_DEGREE_REGEX, message: 'は最初に+か-を記入してください'}
+  validates :sake_degree, format: { with: SAKE_DEGREE_REGEX, message: 'は最初に+か-を記入してください' }
 
-  validates :rice_rate, format: {with: RICE_RATE_REGEX, message: 'は最後に%を記入してください'}
+  validates :rice_rate, format: { with: RICE_RATE_REGEX, message: 'は最後に%を記入してください' }
 
-  validates :degree, numericality: { only_integer: true, grater_than: 0, less_than: 22, message: 'は21以下で入力してください'}
+  validates :degree, numericality: { only_integer: true, grater_than: 0, less_than: 22, message: 'は21以下で入力してください' }
 
-
-  with_options numericality: { other_than: 1, message: 'を選択してください'} do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :type_id
   end
 
