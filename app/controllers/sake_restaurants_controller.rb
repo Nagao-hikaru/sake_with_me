@@ -5,9 +5,10 @@ class SakeRestaurantsController < ApplicationController
   end
 
   def create
+    binding.pry
     @sake_restaurant = SakeRestaurant.new(sake_restaurant_params)
     if @sake_restaurant.save
-      rediect_to root_path, notice: '投稿に成功しました'
+      redirect_to root_path, notice: '投稿に成功しました'
     else
       flash[:alert] = '項目を記入してください'
       render :new
