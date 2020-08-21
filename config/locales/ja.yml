@@ -1,6 +1,14 @@
 ja:
   activerecord:
     attributes:
+      sake:
+        name: 日本酒名
+        image: 画像
+        rice_rate: 精米歩合
+        sake_degree: 日本酒度
+        type_id: 種類
+        company: 酒蔵
+        degree: アルコール度数
       restaurant:
         name: 飲食店名
         image: 画像
@@ -9,3 +17,6 @@ ja:
         address: 番地
         genre_id: 店の業態
         prefecture_id: 都道府県
+
+       
+       
