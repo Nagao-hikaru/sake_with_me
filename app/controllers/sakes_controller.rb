@@ -1,10 +1,10 @@
 class SakesController < ApplicationController
-
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_sake, only: [:show, :edit, :update, :destroy]
+  before_action :forbit_sake, only: [:edit, :update, :destroy]
 
   def index
-    @sakes = Sake.includes(:user).order("created_at DESC")
+    @sakes = Sake.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -31,7 +31,7 @@ class SakesController < ApplicationController
     if @sake.update(sake_params)
       redirect_to sake_path(@sake.id), notice: '編集に成功しました。'
     else
-      flash[:alert] = "全項目記述してください"
+      flash[:alert] = '全項目記述してください'
       render :new
     end
   end
@@ -52,5 +52,10 @@ class SakesController < ApplicationController
 
   def set_sake
     @sake = Sake.find(params[:id])
+  end
+
+  def forbit_sake
+    @sake = Sake.find(params[:id])
+    redirect_to sake_path(@sake.id), notice: '投稿者のみ編集削除できます。' if current_user != @sake.user
   end
 end
