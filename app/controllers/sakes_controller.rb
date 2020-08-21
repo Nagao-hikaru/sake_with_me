@@ -1,6 +1,7 @@
 class SakesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :set_sake, only: [:show, :edit, :update, :destroy]
 
   def index
     @sakes = Sake.includes(:user).order("created_at DESC")
@@ -13,18 +14,23 @@ class SakesController < ApplicationController
   def create
     @sake = Sake.new(sake_params)
     if @sake.save
-      redirect_to root_path, notice: '投稿に成功しました'
+      redirect_to sakes_path, notice: '投稿に成功しました'
     else
-      binding.pry
       flash[:alert] = '全項目記述してください'
       render :new
     end
   end
 
+  def show
+  end
+
   private
 
   def sake_params
-    binding.pry
     params.require(:sake).permit(:name, :image, :rice_rate, :sake_degree, :type_id, :degree, :company, :rice).merge(user_id: current_user.id)
+  end
+
+  def set_sake
+    @sake = Sake.find(params[:id])
   end
 end

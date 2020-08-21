@@ -1,0 +1,68 @@
+<%= render partial: "shared/header3"%>
+
+<main>
+  <div class="show-main">
+    <div class="show-content">
+      <h2 class="show-name"><%= @sake.name%></h2>
+      <div class="img-content">
+        <%= image_tag @sake.image, class: 'img-restaurant'%>
+      </div>
+
+        <% if current_user == @sake.user%>
+
+          <div class="edit-delete-btn">
+            <div class="edit">
+              <%= link_to edit_sake_path(@sake), class: 'edit-btn' do%>
+                <span>日本酒編集</span>
+              <% end %>
+            </div>
+            <div class="delete">
+              <%= link_to sake_path, method: :delete, class: 'delete-btn' do%>
+                <span>削除</span>
+              <% end %>
+            </div>
+          </div>
+
+        <% end %>
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-restaurant">投稿者</th>
+            <td class="detail-value"><%= @sake.user.name%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">種類</th>
+            <td class="detail-value"><%= @sake.type.name%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">日本酒度</th>
+            <td class="detail-value"><%= @sake.sake_degree%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">精米歩合</th>
+            <td class="detail-value"><%= @sake.rice_rate%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">アルコール度数</th>
+            <td class="detail-value"><%= @sake.degree%></td>
+          </tr>
+          <tr>
+            <th class="detail-restaurant">酒蔵</th>
+            <td class="detail-value"><%= @sake.company%></td>
+          </tr>
+          <% unless @sake.rice.blank?%>
+           <tr>
+            <th class="detail-restaurant">使用米</th>
+            <td class="detail-value"><%= @sake.rice%></td>
+          </tr>
+          <% end %>
+         
+        </tbody>
+      </table>
+      <div class="sake-lists">ここに日本酒一覧</div>
+    </div>
+  </div>
+</main>
+
+<%= render partial: 'shared/footer'%>

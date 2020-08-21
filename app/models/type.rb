@@ -6,6 +6,9 @@ class Type < ActiveHash::Base
     {id: 4, name: '大吟醸'},
     {id: 5, name: '純米'},
     {id: 6, name: '本醸造'},
-    {id: 7, name: '普通酒'}
+    {id: 7, name: '生酒'},
+    {id: 8, name: '生原酒'},
+    {id: 9, name: '無濾過生原酒'},
+    {id: 10, name: 'どぶろく'}
 ]
 end
