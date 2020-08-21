@@ -1,0 +1,2 @@
+module SakeRestaurantsHelper
+end
