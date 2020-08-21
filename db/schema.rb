@@ -49,10 +49,12 @@ ActiveRecord::Schema.define(version: 2020_08_21_080440) do
   create_table "sake_restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "sake_id", null: false
     t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_sake_restaurants_on_restaurant_id"
     t.index ["sake_id"], name: "index_sake_restaurants_on_sake_id"
+    t.index ["user_id"], name: "index_sake_restaurants_on_user_id"
   end
 
   create_table "sakes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,5 +92,6 @@ ActiveRecord::Schema.define(version: 2020_08_21_080440) do
   add_foreign_key "restaurants", "users"
   add_foreign_key "sake_restaurants", "restaurants"
   add_foreign_key "sake_restaurants", "sakes"
+  add_foreign_key "sake_restaurants", "users"
   add_foreign_key "sakes", "users"
 end
