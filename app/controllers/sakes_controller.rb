@@ -24,6 +24,26 @@ class SakesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @sake.update(sake_params)
+      redirect_to sake_path(@sake.id), notice: '編集に成功しました。'
+    else
+      flash[:alert] = "全項目記述してください"
+      render :new
+    end
+  end
+
+  def destroy
+    if @sake.destroy
+      redirect_to sakes_path, notice: '削除に成功しました。'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def sake_params
