@@ -3,6 +3,8 @@ class Sake < ApplicationRecord
   belongs_to_active_hash :type
   belongs_to :user
   has_one_attached :image
+  has_many :sake_restaurants
+  has_many :restaurants, through: :sake_restaurants
 
   # DEGREE_REGEX = /\A([1-9]\d*|0)\z/
   SAKE_DEGREE_REGEX = /\A[+-]/.freeze

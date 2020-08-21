@@ -4,6 +4,8 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :user
   has_one_attached :image
+  has_many :sake_restaurants
+  has_many :sakes, through: :sake_restaurants
 
   with_options presence: true do
     validates :image
