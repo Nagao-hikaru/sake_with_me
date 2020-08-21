@@ -2,6 +2,7 @@ class SakesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_sake, only: [:show, :edit, :update, :destroy]
+  before_action :forbit_sake, only: [:edit, :update, :destroy]
 
   def index
     @sakes = Sake.includes(:user).order("created_at DESC")
@@ -52,5 +53,12 @@ class SakesController < ApplicationController
 
   def set_sake
     @sake = Sake.find(params[:id])
+  end
+
+  def forbit_sake
+    @sake = Sake.find(params[:id])
+    if current_user != @sake.user
+      redirect_to sake_path(@sake.id), notice: '投稿者のみ編集削除できます。'
+    end
   end
 end

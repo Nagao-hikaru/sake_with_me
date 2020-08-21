@@ -6,7 +6,9 @@ class Sake < ApplicationRecord
 
 
   # DEGREE_REGEX = /\A([1-9]\d*|0)\z/
-  RICE_RATE_REGEX = /\A[+-]/
+  SAKE_DEGREE_REGEX = /\A[+-]/
+  RICE_RATE_REGEX = /[%]\z/
+  
   
 
   with_options presence: true do
@@ -19,9 +21,11 @@ class Sake < ApplicationRecord
     validates :company
   end
 
-  validates :sake_degree, format: { with: RICE_RATE_REGEX, message: 'は最初に+か-をつけてください'}
+  validates :sake_degree, format: { with: SAKE_DEGREE_REGEX, message: 'は最初に+か-を記入してください'}
 
-  validates :degree, numericality: { only_integer: true, grater_than: 0, less_than: 21, message: 'は21以下で入力してください'}
+  validates :rice_rate, format: {with: RICE_RATE_REGEX, message: 'は最後に%を記入してください'}
+
+  validates :degree, numericality: { only_integer: true, grater_than: 0, less_than: 22, message: 'は21以下で入力してください'}
 
 
   with_options numericality: { other_than: 1, message: 'を選択してください'} do
