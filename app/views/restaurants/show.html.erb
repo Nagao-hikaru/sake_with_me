@@ -54,7 +54,16 @@
          
         </tbody>
       </table>
-      <div class="sake-lists">ここに日本酒一覧</div>
+      <div class="sake-lists">ここで飲める日本酒一覧</div>
+        <div class="sake-restaurant-btn">
+          <% @restaurant.sakes.each do |sake| %>
+            <div class="sake-btn">
+              <%= link_to sake_path(sake), class: 'sake-restaurant-link' do %>
+              <span><%= sake.name %></span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
     </div>
   </div>
 </main>

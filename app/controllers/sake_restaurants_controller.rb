@@ -1,11 +1,11 @@
 class SakeRestaurantsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @sake_restaurant = SakeRestaurant.new
   end
 
   def create
-    binding.pry
     @sake_restaurant = SakeRestaurant.new(sake_restaurant_params)
     if @sake_restaurant.save
       redirect_to root_path, notice: '投稿に成功しました'
