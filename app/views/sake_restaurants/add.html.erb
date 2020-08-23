@@ -1,0 +1,11 @@
+<h1>日本酒いいよね</h1>
+
+<%= form_with model: [@restaurant, @sake_restaurant], url: add_create_sake_restaurant_path, method: :post, class: 'devise-content', local: true do |f|%>
+
+<%= f.label :sake_id, "日本酒"%>
+<%= f.collection_select(:sake_id, Sake.all, :id, :name, {}, {})%>
+
+<%= f.submit "投稿する", class: 'submit-btn', id: 'submit'%>
+
+
+<% end %>
