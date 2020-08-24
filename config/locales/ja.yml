@@ -17,6 +17,9 @@ ja:
         address: 番地
         genre_id: 店の業態
         prefecture_id: 都道府県
+      sake_restaurant:
+        restaurant: 飲食店
+        sake: 日本酒
 
        
        
