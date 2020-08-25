@@ -14,7 +14,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to root_path, notice: '投稿に成功しました。'
+      redirect_to add_sake_restaurant_path(@restaurant.id), notice: '続いて日本酒を追加してください。'
     else
       flash[:alert] = '全項目記述してください'
       render :new
@@ -58,4 +58,5 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     redirect_to restaurant_path(@restaurant.id), notice: '投稿者のみ編集,削除できます。' if current_user != @restaurant.user
   end
+
 end

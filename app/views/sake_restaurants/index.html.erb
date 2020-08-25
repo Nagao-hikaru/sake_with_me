@@ -1,0 +1,12 @@
+<%= search_form_for @search, url: new_sake_restaurant_path, class: 'devise-content' do |f| %>
+<div class="form-wrap">
+  <div class="field">
+    <%= f.label :name_cont, "飲食店の選択", class: 'form-text' %>
+    <%= f.search_field :name_cont, class: 'input-default' %>
+  </div>
+
+  <%= f.submit "検索", class: 'submit-btn', id: 'submit' %>
+
+</div>
+<% end %>
+

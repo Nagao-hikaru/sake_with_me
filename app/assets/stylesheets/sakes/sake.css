@@ -2,3 +2,21 @@
   background-image: url("/images/header2.png");
   background-size: cover;
 }
+
+.sake-restaurant-list{
+  /* background-color: rgb(163, 159, 159); */
+  margin: 10px;
+  padding: 10px;
+}
+
+.prefecture-name{
+  width: 100%;
+  /* background-color: red; */
+  text-align: center;
+  margin-right: 4px;
+
+}
+
+.restaurant-path{
+  background-color: bisque;
+}
