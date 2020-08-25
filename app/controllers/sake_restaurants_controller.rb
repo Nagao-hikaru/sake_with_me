@@ -1,7 +1,14 @@
 class SakeRestaurantsController < ApplicationController
   before_action :authenticate_user!
+  # before_action :search_restaurant, only: [:search, :index]
+
+  def index
+    @search = Restaurant.ransack(params[:q])
+  end
 
   def new
+    @search = Restaurant.ransack(params[:q])
+    @restaurants = @search.result
     @sake_restaurant = SakeRestaurant.new
   end
 
@@ -30,10 +37,17 @@ class SakeRestaurantsController < ApplicationController
     end
   end
 
+  def search
+    return nil if params[:input] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
   def sake_restaurant_params
     params.require(:sake_restaurant).permit(:sake_id, :restaurant_id).merge(user_id: current_user.id)
   end
+
 
 end
