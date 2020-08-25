@@ -1,15 +1,26 @@
-<h1>日本酒いいよね</h1>
+
 
 <%= form_with model: @sake_restaurant, class: 'devise-content', local: true do |f|%>
-<%= f.label :restaurant_id, "飲食店", class: "form-text"%>
 
+<% if @restaurants.any?%>
   <%= render "shared/error_messages", model: f.object %>
-<%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: '選択してください'}, {})%>
+  <%= f.label :restaurant_id, "飲食店", class: "form-text"%>
+  <%= f.collection_select(:restaurant_id, @restaurants, :id, :name, {selected: @restaurants}, {})%>
 
-<%= f.label :sake_id, "日本酒"%>
-<%= f.collection_select(:sake_id, Sake.all, :id, :name, {prompt: '選択してください'}, {})%>
+  <%= f.label :sake_id, "日本酒"%>
+  <%= f.collection_select(:sake_id, Sake.all, :id, :name, {prompt: '選択してください'}, {})%>
 
-<%= f.submit "投稿する", class: 'submit-btn', id: 'submit'%>
+  <%= f.submit "投稿する", class: 'submit-btn', id: 'submit'%>
 
 
-<% end %>
+
+
+<% else%>
+  <p>候補が見つかりませんでした。</p>
+  <%= link_to 'もういちど検索してください', sake_restaurants_path, class: 'root-top'%>
+    <% end %>
+    <% end %>
+
+
+
+
