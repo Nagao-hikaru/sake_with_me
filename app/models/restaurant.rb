@@ -15,7 +15,6 @@ class Restaurant < ApplicationRecord
     validates :beer
     validates :genre
     validates :prefecture
-    validates :city
     validates :address
   end
 
