@@ -410,3 +410,9 @@ main{
 .sake-restaurant-link:hover{
   color: #fff;
 }
+
+#map{
+  height: 500px;
+  width: 700px;
+  margin-bottom: 20px;
+}
