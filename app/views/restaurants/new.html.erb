@@ -15,12 +15,12 @@
 
       <div class="field">
         <%= f.label :name, "店名", class: 'form-text'%>
-        <%= f.text_area :name, placeholder:"飲食店名を入力してください", class: 'input-default'%>
+        <%= f.text_field :name, placeholder:"飲食店名を入力してください", class: 'input-default'%>
       </div>
 
       <div class="field">
         <%= f.label :beer, "生ビール", class: 'form-text'%>
-        <%= f.text_area :beer, placeholder:"生ビール名を入力してください", class: 'input-default'%>
+        <%= f.text_field :beer, placeholder:"生ビール名を入力してください", class: 'input-default'%>
       </div>
 
       <div class="field">
@@ -34,14 +34,11 @@
       </div>
 
       <div class="field">
-        <%= f.label :city, '住所', class: 'form-text' %>
-        <%= f.text_area :city, placeholder:'住所を入力してください', class: 'input-default'%>
+        <%= f.label :address, '住所', class: 'form-text' %>
+        <%= f.text_field :address, placeholder:'住所を入力してください', class: 'input-default'%>
       </div>
 
-      <div class="field">
-        <%= f.label :address, '番地', class: 'form-text' %>
-        <%= f.text_area :address, placeholder: '番地を入力してください', class: 'input-default'%>
-      </div>
+
 
       <div class="field">
         <%= f.submit "投稿する", class:'submit-btn', id: 'submit'%>

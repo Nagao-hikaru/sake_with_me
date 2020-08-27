@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destory]
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :google]
   before_action :forbit_restaurant, only: [:edit, :update, :destroy]
 
   def index
@@ -44,10 +44,13 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def google
+  end
+
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :image, :beer, :genre_id, :prefecture_id, :city, :address).merge(user_id: current_user.id)
+    params.require(:restaurant).permit(:name, :image, :beer, :genre_id, :prefecture_id, :address).merge(user_id: current_user.id)
   end
 
   def set_restaurant

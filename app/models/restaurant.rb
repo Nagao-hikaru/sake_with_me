@@ -6,6 +6,8 @@ class Restaurant < ApplicationRecord
   has_one_attached :image
   has_many :sake_restaurants, dependent: :destroy
   has_many :sakes, through: :sake_restaurants, dependent: :destroy
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   with_options presence: true do
     validates :image
@@ -13,7 +15,6 @@ class Restaurant < ApplicationRecord
     validates :beer
     validates :genre
     validates :prefecture
-    validates :city
     validates :address
   end
 

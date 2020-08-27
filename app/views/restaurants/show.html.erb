@@ -45,15 +45,57 @@
           </tr>
           <tr>
             <th class="detail-restaurant">住所</th>
-            <td class="detail-value"><%= @restaurant.city%></td>
-          </tr>
-          <tr>
-            <th class="detail-restaurant">番地</th>
             <td class="detail-value"><%= @restaurant.address%></td>
           </tr>
          
         </tbody>
       </table>
+
+      <%= link_to '現在位置から店の行き方を知りたい方はこちら', google_restaurant_path, class: 'root-top' %>
+
+      <script type="text/javascript">
+        function initMap() {
+          let test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+          let map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15, 
+            center: test
+            });
+          let transitLayer = new google.maps.TransitLayer();
+          transitLayer.setMap(map);
+          console.log(transitLayer)
+          console.log('aaa')
+
+          let contentString = '店舗名：<%= @restaurant.name %>';
+          let infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          let marker = new google.maps.Marker({
+            position:test,
+            map: map,
+            title: contentString,
+            animation: google.maps.Animation.DROP,
+            icon: "https://maps.google.com/mapfiles/ms/micons/pink-dot.png"
+            });
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+            this.setAnimation(google.maps.Animation.BOUNCE);
+          });
+
+          marker.addListener('mouseout', function(){
+            this.setAnimation(null);
+          });
+
+        }
+      </script>
+
+ <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+    </script>
+
+<div id="map"></div>
+
+
       <div class="sake-lists">ここで飲める日本酒一覧</div>
         <div class="sake-restaurant-btn">
           <% @restaurant.sakes.each do |sake| %>

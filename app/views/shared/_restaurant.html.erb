@@ -1,0 +1,32 @@
+<%# <% @restaurants.each do |restaurant|%> 
+          <li class="restaurant-list">
+            <%= link_to restaurant_path(restaurant), class: 'detail-restaurant' do %>
+              <div class="restaurant-name">
+                <span><%= restaurant.name %></span>
+                </div>
+       
+              <div class="detail">
+                <div class= "detail-left">
+                  <%= image_tag restaurant.image.variant(resize: '400x400'), class: 'img-restaurant'%>
+                </div>
+                <ul class="detail-right">
+                  <li class="genre">
+                    <p class="genre-list">業態</p>
+                    <p class="genre-name"><%= restaurant.genre.name%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">生ビール</p>
+                    <p class="genre-name"><%= restaurant.beer%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">都道府県</p>
+                    <p class="genre-name"><%= restaurant.prefecture.name%></p>
+                  </li>
+                  <li class="genre">
+                    <p class="genre-list">投稿者</p>
+                    <p class="genre-name"><%= restaurant.user.name%></p>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </li>
