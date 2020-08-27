@@ -53,29 +53,38 @@
 
       <script type="text/javascript">
         function initMap() {
-          var test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
-          var map = new google.maps.Map(document.getElementById('map'), {
+          let test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+          let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15, 
             center: test
             });
-          var transitLayer = new google.maps.TransitLayer();
+          let transitLayer = new google.maps.TransitLayer();
           transitLayer.setMap(map);
+          console.log(transitLayer)
           console.log('aaa')
 
-          var contentString = '住所：<%= @restaurant.address %>';
-          var infowindow = new google.maps.InfoWindow({
+          let contentString = '店舗名：<%= @restaurant.name %>';
+          let infowindow = new google.maps.InfoWindow({
             content: contentString
           });
 
-          var marker = new google.maps.Marker({
+          let marker = new google.maps.Marker({
             position:test,
             map: map,
-            title: contentString
+            title: contentString,
+            animation: google.maps.Animation.DROP,
+            icon: "https://maps.google.com/mapfiles/ms/micons/pink-dot.png"
             });
 
           marker.addListener('click', function() {
             infowindow.open(map, marker);
+            this.setAnimation(google.maps.Animation.BOUNCE);
           });
+
+          marker.addListener('mouseout', function(){
+            this.setAnimation(null);
+          });
+
         }
       </script>
 
