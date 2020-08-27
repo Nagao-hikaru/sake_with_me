@@ -44,6 +44,9 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def google
+  end
+
   private
 
   def restaurant_params
