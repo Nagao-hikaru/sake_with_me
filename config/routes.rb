@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'restaurants/index'
   root "restaurants#index"
   resources :restaurants  do
-    collection do
+    member do
       get 'google'
     end
   end

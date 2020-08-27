@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destory]
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :google]
   before_action :forbit_restaurant, only: [:edit, :update, :destroy]
 
   def index

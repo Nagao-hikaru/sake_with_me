@@ -51,6 +51,8 @@
         </tbody>
       </table>
 
+      <%= link_to '現在位置から店の行き方を知りたい方はこちら', google_restaurant_path, class: 'root-top' %>
+
       <script type="text/javascript">
         function initMap() {
           let test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
