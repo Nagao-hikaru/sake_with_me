@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../hover")
 require("../sake_restaurant")
+require('../main')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
