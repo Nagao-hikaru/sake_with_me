@@ -434,3 +434,29 @@ main{
   width: 70%;
   height: 500px;
 }
+
+.restaurant-show-user{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+
+.restaurant-show-user::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #ffa014;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.restaurant-show-user:hover::after{
+  width: 100%;
+}
