@@ -33,13 +33,15 @@
         <li class= "category-list">
           <%= link_to "日本酒新規投稿", new_sake_path %>
         </li>
-        
+
         <li class= "category-list">
           <%= link_to "美味しかった日本酒投稿", sake_restaurants_path %>
         </li>
+        <% if user_signed_in?%>
         <li class= "category-list">
-          <%= link_to "マイページ", "#"%>
+          <%= link_to "マイページ", user_path(current_user)%>
         </li>
+        <% end%>
       </ul>
     </div>
   </div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/show'
+
   devise_for :users
   get 'restaurants/index'
   root "restaurants#index"
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
       post 'add_create'
     end
   end
+  resources :users, only: [:show]
 end
