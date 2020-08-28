@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'restaurants/index'
   root "restaurants#index"
   resources :restaurants  do
+    resources :likes, only: [:create, :destroy]
     member do
       get 'google'
     end
