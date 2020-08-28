@@ -17,4 +17,8 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   validates :password, format: { with: PASSWORD_REGEX, message: '半角英数字混合で記入してください' }
+
+  def already_liked?(restaurant)
+    self.likes.exists?(restaurant_id: restaurant.id)
+  end
 end
