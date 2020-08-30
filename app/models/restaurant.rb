@@ -11,6 +11,11 @@ class Restaurant < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+  
+
   with_options presence: true do
     validates :image
     validates :name

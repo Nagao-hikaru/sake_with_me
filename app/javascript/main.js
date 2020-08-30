@@ -5,3 +5,4 @@ window.addEventListener('load', function(){
     let result = window.confirm('送信内容に間違いはありませんか？')
   })
 })
+
