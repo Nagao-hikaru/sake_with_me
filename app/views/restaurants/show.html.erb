@@ -50,8 +50,11 @@
          
         </tbody>
       </table>
-
-     <%= render partial: 'likes/like', locals: { @restaurant: restaurant }%>
+      <div id="restaurant_<%= @restaurant.id%>">
+      
+     <%= render partial: 'likes/like', locals: { restaurant: @restaurant} %>
+      </div>
+ 
 
 
       <%= link_to '現在位置から店の行き方を知りたい方はこちら', google_restaurant_path, class: 'root-top' %>
