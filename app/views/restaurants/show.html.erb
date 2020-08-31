@@ -4,11 +4,31 @@
   <div class="show-main">
     <div class="show-content">
       <h2 class="show-name"><%= @restaurant.name%></h2>
-      <div class="img-content">
-        <% @restaurant.images.each do |image| %>
-        <%= image_tag image, class: 'img-restaurant'%>
-        <% end %>
+      <div class="sample sample01">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <% @restaurant.images.each do |image| %>
+              <div class="swiper-slide">
+                <%= image_tag image%>
+              </div>
+              <% end %>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
+        <script src="swiper.js"></script>
+        <script>
+          var swiper = new Swiper('.swiper-container', {
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            }
+          });
+        </script>
+   
 
         <% if current_user == @restaurant.user%>
 

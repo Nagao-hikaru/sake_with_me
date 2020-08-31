@@ -11,7 +11,7 @@
       <div class="field">
         <%= f.label :image, '日本酒の画像', class: 'form-text'%>
         <div class="sake-img">
-          <%= f.file_field :images, 'message[images][]', class: 'image-default' %>
+          <%= f.file_field :image, class: 'image-default', id: 'restaurant-image' %>
           <div id="image-list"></div>
         </div>
       </div>

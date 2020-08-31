@@ -2,7 +2,7 @@ class Sake < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :type
   belongs_to :user
-  has_many_attached :images
+  has_one_attached :image
   has_many :sake_restaurants
   has_many :restaurants, through: :sake_restaurants
 
@@ -11,7 +11,7 @@ class Sake < ApplicationRecord
   RICE_RATE_REGEX = /[%]\z/.freeze
 
   with_options presence: true do
-    validates :images
+    validates :image
     validates :name
     validates :rice_rate
     validates :sake_degree
