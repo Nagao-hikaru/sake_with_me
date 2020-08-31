@@ -4,7 +4,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
     console.log('123')
     const imageList = document.getElementById('image-list');
     console.log(imageList)
-    document.getElementById('restaurant_image').addEventListener('change',function(e){
+    document.getElementById('sake_image').addEventListener('change',function(e){
       console.log(e)
 
       const file = e.target.files[0];
@@ -15,7 +15,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
 
       const blobImage = document.createElement('img');
 
-      blobImage.setAttribute('src', blob);
+      blobImage.setAttribute('src', blob)
       imageList.appendChild(imageElement);
       imageElement.appendChild(blobImage);
     });
