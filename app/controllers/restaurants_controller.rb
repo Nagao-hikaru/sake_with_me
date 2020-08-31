@@ -13,9 +13,11 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    binding.pry
     if @restaurant.save
       redirect_to add_sake_restaurant_path(@restaurant.id), notice: '続いて日本酒を追加してください。'
     else
+      binding.pry
       flash[:alert] = '全項目記述してください'
       render :new
     end
@@ -51,7 +53,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :image, :beer, :genre_id, :prefecture_id, :address).merge(user_id: current_user.id)
+    params.require(:restaurant).permit(:name, :beer, :genre_id, :prefecture_id, :address, images: []).merge(user_id: current_user.id)
   end
 
   def set_restaurant
