@@ -16,7 +16,7 @@ class Restaurant < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :image
+    validates :images
     validates :name
     validates :beer
     validates :genre
