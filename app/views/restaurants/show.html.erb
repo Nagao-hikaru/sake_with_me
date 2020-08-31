@@ -5,7 +5,9 @@
     <div class="show-content">
       <h2 class="show-name"><%= @restaurant.name%></h2>
       <div class="img-content">
-        <%= image_tag @restaurant.image, class: 'img-restaurant'%>
+        <% @restaurant.images.each do |image| %>
+        <%= image_tag image, class: 'img-restaurant'%>
+        <% end %>
       </div>
 
         <% if current_user == @restaurant.user%>

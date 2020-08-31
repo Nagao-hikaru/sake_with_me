@@ -9,8 +9,8 @@
       <h1 class="form-header-text">飲食店情報入力</h1>
 
       <div class="field">
-        <%= f.label :image, '店の画像', class: 'form-text'%>
-        <%= f.file_field :image, class: 'image-default' %>
+        
+        <%= f.file_field :images, name: 'restaurant[images][]', class: 'image-default', id: 'restaurant_image' %>
         <div id="image-list"></div>
       </div>
 
