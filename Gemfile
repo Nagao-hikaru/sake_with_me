@@ -81,3 +81,4 @@ gem 'gmaps4rails'
 gem 'geocoder'
 
 gem 'dotenv-rails'
+gem 'material_icons'
