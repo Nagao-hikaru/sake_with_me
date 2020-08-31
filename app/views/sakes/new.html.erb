@@ -10,7 +10,10 @@
 
       <div class="field">
         <%= f.label :image, '日本酒の画像', class: 'form-text'%>
-        <%= f.file_field :image, class: 'image-default' %>
+        <div class="sake-img">
+          <%= f.file_field :image, class: 'image-default', id: 'restaurant-image' %>
+          <div id="image-list"></div>
+        </div>
       </div>
 
       <div class="field">

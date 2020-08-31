@@ -47,7 +47,7 @@ class SakesController < ApplicationController
   private
 
   def sake_params
-    params.require(:sake).permit(:name, :image, :rice_rate, :sake_degree, :type_id, :degree, :company, :rice).merge(user_id: current_user.id)
+    params.require(:sake).permit(:name, :rice_rate, :sake_degree, :type_id, :degree, :company, :rice, :image).merge(user_id: current_user.id)
   end
 
   def set_sake

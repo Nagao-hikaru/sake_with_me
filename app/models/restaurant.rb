@@ -3,7 +3,7 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :genre
   belongs_to_active_hash :prefecture
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :sake_restaurants, dependent: :destroy
   has_many :sakes, through: :sake_restaurants, dependent: :destroy
   has_many :likes
@@ -16,7 +16,7 @@ class Restaurant < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :image
+    validates :images
     validates :name
     validates :beer
     validates :genre
