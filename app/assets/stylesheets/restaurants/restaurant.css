@@ -460,3 +460,53 @@ main{
 .restaurant-show-user:hover::after{
   width: 100%;
 }
+
+.favorite-restaurant{
+  text-decoration: none;
+  padding: 30px;
+  display: flex;
+}
+
+.fav-count{
+  color: black;
+}
+
+.good{
+  animation-name: good;
+ animation-duration: .6s;
+ animation-fill-mode: forwards;
+ padding: 0px 20px;
+}
+
+.bad{
+  animation-name: bad;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+  padding: 0px 20px;
+}
+
+@keyframes good {
+ 0% {
+   transform: scale(0);
+ }
+ 50% {
+   transform: scale(1.1);
+ }
+ 100% {
+   transform: scale(1);
+   color: red;
+ }
+}
+
+@keyframes bad {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: #e4e4e4;
+  }
+ }
