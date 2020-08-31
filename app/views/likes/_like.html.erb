@@ -1,8 +1,15 @@
+<div class="sake-lists">お気に入り登録</div>
 <% if user_signed_in? %>
   <% if restaurant.liked_by?(current_user) %>
 
-    <td><%= link_to 'いいね外す', restaurant_like_path(restaurant), method: :DELETE, remote: true %> <%= restaurant.likes.count %></td>
+    <%= link_to restaurant_like_path(restaurant), class: 'favorite-restaurant', method: :DELETE, remote: true do %> 
+      <i class="material-icons good" >favorite</i>
+      <p class="fav-count"><%= restaurant.likes.count %></p>
+    <% end %>
   <% else %>
-  <td><%= link_to 'いいねする', restaurant_like_path(restaurant), method: :POST, remote: true %> <%= restaurant.likes.count %></td>
+  <%= link_to  restaurant_like_path(restaurant), class: 'favorite-restaurant', method: :POST, remote: true do %>
+    <i class="material-icons bad">favorite</i>
+    <p class=" fav-count"><%= restaurant.likes.count %></p>
+  <% end %>
   <% end %>
 <% end %>
