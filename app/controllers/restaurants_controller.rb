@@ -62,5 +62,4 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     redirect_to restaurant_path(@restaurant.id), notice: '投稿者のみ編集,削除できます。' if current_user != @restaurant.user
   end
-
 end

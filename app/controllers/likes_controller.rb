@@ -2,7 +2,6 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_like
 
-
   def create
     user = current_user
     restaurant = Restaurant.find(params[:restaurant_id])
@@ -16,8 +15,8 @@ class LikesController < ApplicationController
     like.delete
   end
 
-
   private
+
   def set_like
     @restaurant = Restaurant.find(params[:restaurant_id])
   end

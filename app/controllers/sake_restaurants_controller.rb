@@ -38,9 +38,10 @@ class SakeRestaurantsController < ApplicationController
   end
 
   def search
-    return nil if params[:input] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
-    render json:{ keyword: tag }
+    return nil if params[:input] == ''
+
+    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"])
+    render json: { keyword: tag }
   end
 
   private
@@ -48,6 +49,4 @@ class SakeRestaurantsController < ApplicationController
   def sake_restaurant_params
     params.require(:sake_restaurant).permit(:sake_id, :restaurant_id).merge(user_id: current_user.id)
   end
-
-
 end
