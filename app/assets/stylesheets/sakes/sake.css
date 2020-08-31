@@ -29,3 +29,12 @@
 .sake-img{
   display: flex;
 }
+
+.add-content{
+  width: 100%;
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
