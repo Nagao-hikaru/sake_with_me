@@ -53,6 +53,7 @@
 
 .nav{
   height: 40%;
+  display: none;
 }
 
 .header-lists{
@@ -139,6 +140,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  transition: opacity .6s;
 }
 
 .overlay #close {
@@ -149,8 +151,73 @@
   cursor: pointer;
 }
 
-
+#open{
+  cursor: pointer;
+}
 
 .overlay li{
   margin-top: 24px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay-show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.overlay-show li{
+  opacity: 1;
+  transform: none;
+}
+
+.overlay-show li:nth-child(1){
+  transition-delay: .1s;
+}
+.overlay-show li:nth-child(2){
+  transition-delay: .2s;
+}
+.overlay-show li:nth-child(3){
+  transition-delay: .3s;
+}
+
+.hide{
+  display: none;
+}
+
+.sp-menu{
+  position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+}
+
+/* @media (min-width: 800px) {
+  .sp-menu{
+    display: none;
+  }
+} */
+
+ @media (min-width: 800px){
+  .nav{
+    display: block;
+  }
+
+  .sp-menu{
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 799px){
+  .header-main{
+    height: 80px;
+    width: 100%;
+  }
+
+  .upper-header{
+    justify-content: space-around;
+  }
 }
