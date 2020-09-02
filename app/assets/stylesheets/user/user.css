@@ -126,3 +126,43 @@
 
 /* .submit:hover{
 } */
+.user-container{
+  width: 70%;
+}
+.user-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.user-menu li a:not(.active):hover {
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+.user-menu li a{
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.user-menu li a.active{
+  background: #333;
+  color: #fff;
+}
+.content.active{
+  background: #333;
+  color: #fff;
+  display: block;
+  min-height: 150px;
+  padding: 12px;
+}
+  
+.content{
+  display: none;
+}
