@@ -12,6 +12,7 @@
         <div class= "users">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </div>
+        
         <% else %>
         <div class="users">
           <%= link_to "ログイン", new_user_session_path %>
@@ -22,6 +23,9 @@
         <% end %>
       </div>
     </div>
+      <div class="sp-menu" id="sp-menu">
+        <span class="material-icons" id="open">menu</span>
+      </div>
     <div class= "nav">
       <ul class="header-lists">
         <li class= "category-list">
@@ -43,10 +47,8 @@
         </li>
         <% end%>
       </ul>
-      <div class="sp-menu">
-        <span class="material-icons" id="open">menu</span>
-      </div>
     </div>
+    
     <div class="overlay">
       <span class="material-icons" id="close">close</span>
       <div class="yeah">
