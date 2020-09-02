@@ -139,7 +139,7 @@
   padding: 64px;
   opacity: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   transition: opacity .6s;
 }
 
@@ -159,7 +159,7 @@
   margin-top: 24px;
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity .3s, transform .3s;
+  transition: opacity .5s, transform .5s;
 }
 
 .overlay-show {
@@ -181,6 +181,12 @@
 .overlay-show li:nth-child(3){
   transition-delay: .3s;
 }
+.overlay-show li:nth-child(4){
+  transition-delay: .4s;
+}
+.overlay-show li:nth-child(5){
+  transition-delay: .5s;
+}
 
 .hide{
   display: none;
@@ -199,7 +205,7 @@
   }
 } */
 
- @media (min-width: 800px){
+ @media (min-width: 750px){
   .nav{
     display: block;
   }
@@ -211,7 +217,7 @@
 
 }
 
-@media (max-width: 799px){
+@media (max-width: 749px){
   .header-main{
     height: 80px;
     width: 100%;

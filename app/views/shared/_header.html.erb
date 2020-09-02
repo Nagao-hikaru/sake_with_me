@@ -12,7 +12,6 @@
         <div class= "users">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </div>
-        
         <% else %>
         <div class="users">
           <%= link_to "ログイン", new_user_session_path %>
@@ -37,7 +36,6 @@
         <li class= "category-list">
           <%= link_to "日本酒新規投稿", new_sake_path %>
         </li>
-
         <li class= "category-list">
           <%= link_to "美味しかった日本酒投稿", sake_restaurants_path %>
         </li>
@@ -48,14 +46,28 @@
         <% end%>
       </ul>
     </div>
-    
     <div class="overlay">
       <span class="material-icons" id="close">close</span>
-      <div class="yeah">
-        <ul class="ho">
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Menu</a></li>
+      <div class="">
+        <ul class="">
+        <li class= "">
+          <%= link_to "日本酒一覧", sakes_path %>
+        </li>
+        <li class= "">
+          <%= link_to "飲食店新規投稿", new_restaurant_path %>
+        </li>
+        <li class= "">
+          <%= link_to "日本酒新規投稿", new_sake_path %>
+        </li>
+
+        <li class= "">
+          <%= link_to "美味しかった日本酒投稿", sake_restaurants_path %>
+        </li>
+        <% if user_signed_in?%>
+        <li class= "">
+          <%= link_to "マイページ", user_path(current_user)%>
+        </li>
+        <% end%>
         </ul>
       </div>
     </div>
