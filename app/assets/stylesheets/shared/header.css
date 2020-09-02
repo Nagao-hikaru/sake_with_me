@@ -126,3 +126,31 @@
   line-height: 40px;
   margin-top: 20px;
 }
+
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+
+.overlay li{
+  margin-top: 24px;
+}
