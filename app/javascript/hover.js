@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('DomContentLoad', function(){
   const hoverList = document.getElementsByClassName("users")
   const hoverLists = Array.from(hoverList)
   const submitButton = document.getElementById("submit")
