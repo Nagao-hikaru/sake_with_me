@@ -1,23 +1,54 @@
-<h1>ユーザー詳細ページ</h1>
-<h3><%= @user.name %></h3>
+<%= render partial: "shared/header" %>
 
-<div class="user-container">
+<div class="user-show-main">
+
+  <h1>ユーザー詳細ページ</h1>
+  <h3><%= @user.name %></h3>
+
+  <div class="user-container">
     <ul class="user-menu">
       <li><a href="#" class="active" data-id="restaurant">投稿飲食店</a></li>
+      <li><a href="#" data-id="sake">投稿日本酒</a></li>
       <li><a href="#" data-id="favorite">いいね</a></li>
     </ul>
 
     <section class="content active" id="restaurant">
-      <% @user.restaurants.each do |restaurant| %>
-        <%= restaurant.name %>
-      <% end %>
+      <ul class="user-list">
+        <% @user.restaurants.each do |restaurant| %>
+          <div class="sake-btn">
+              <%= restaurant.prefecture.name%>: 
+              <%= link_to restaurant_path(restaurant), class: 'sake-restaurant-link' do %>
+              <span><%= restaurant.name %></span>
+              <% end %>
+            </div>
+        <% end %>
+      </ul>
+    </section>
+    <section class="content" id="sake">
+      <ul class="user-list">
+        <% @user.sakes.each do |sake| %>
+          <div class="sake-btn">
+              <%= sake.company%>: 
+              <%= link_to sake_path(sake), class: 'sake-restaurant-link' do %>
+              <span><%= sake.name %></span>
+              <% end %>
+            </div>
+        <% end %>
+      </ul>
     </section>
     <section class="content" id="favorite">
-      <% @user.like_restaurants.each do |like| %>
-        <%= like.name %>
-      <% end %>
+      <ul class="user-list">
+        <% @user.like_restaurants.each do |like| %>
+            <div class="sake-btn">
+              <%= like.prefecture.name%>: 
+              <%= link_to restaurant_path(like), class: 'sake-restaurant-link' do %>
+              <span><%= like.name %></span>
+              <% end %>
+            </div>
+        <% end %>
+      </ul>
     </section>
-    <%# <section class="content">
-      お問い合わせ
-    </section> %>
   </div>
+</div>
+
+<%= render partial: 'shared/footer'%>

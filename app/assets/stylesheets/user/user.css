@@ -152,17 +152,35 @@
 }
 
 .user-menu li a.active{
-  background: #333;
-  color: #fff;
+  background: rgb(168, 167, 167);
+  color: white;
 }
 .content.active{
-  background: #333;
-  color: #fff;
+  background: rgb(168, 167, 167);
+  color: white;
   display: block;
-  min-height: 150px;
+  min-height: 180px;
   padding: 12px;
 }
   
 .content{
   display: none;
+}
+
+
+
+.user-show-main{
+  margin: 10px 0px;
+  width: 100vw;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.user-list{
+  padding: 20px 0px 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
