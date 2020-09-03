@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "activerecord"
-  ]
+  ],
+  "git.ignoreLimitWarning": true
 }

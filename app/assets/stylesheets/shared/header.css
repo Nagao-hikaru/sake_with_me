@@ -53,6 +53,7 @@
 
 .nav{
   height: 40%;
+  display: none;
 }
 
 .header-lists{
@@ -93,7 +94,7 @@
 
 .header-img{
   margin-top: 20px;
-  height: 580px;
+  height: 500px;
   width: 100%;
   background-image: url("/images/header4.png");
   background-size: cover;
@@ -102,7 +103,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 130px;
+  padding-top: 90px;
 }
 
 .img-rgb{
@@ -116,7 +117,7 @@
 
 .title-contents h2{
   color: white;
-  font-size: 8vh;
+  font-size: 7vh;
   margin-bottom: 20px;
 }
 
@@ -125,4 +126,104 @@
   font-size: 2.5vh;
   line-height: 40px;
   margin-top: 20px;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity .6s;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+#open{
+  cursor: pointer;
+}
+
+.overlay li{
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s, transform .5s;
+}
+
+.overlay-show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.overlay-show li{
+  opacity: 1;
+  transform: none;
+}
+
+.overlay-show li:nth-child(1){
+  transition-delay: .1s;
+}
+.overlay-show li:nth-child(2){
+  transition-delay: .2s;
+}
+.overlay-show li:nth-child(3){
+  transition-delay: .3s;
+}
+.overlay-show li:nth-child(4){
+  transition-delay: .4s;
+}
+.overlay-show li:nth-child(5){
+  transition-delay: .5s;
+}
+
+.hide{
+  display: none;
+}
+
+.sp-menu{
+  position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+}
+
+/* @media (min-width: 800px) {
+  .sp-menu{
+    display: none;
+  }
+} */
+
+ @media (min-width: 750px){
+  .nav{
+    display: block;
+  }
+
+  .sp-menu{
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 749px){
+  .header-main{
+    height: 80px;
+    width: 100%;
+  }
+
+  .upper-header{
+    justify-content: space-around;
+  }
 }

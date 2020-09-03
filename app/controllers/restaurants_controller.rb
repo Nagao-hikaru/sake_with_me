@@ -13,7 +13,6 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    binding.pry
     if @restaurant.save
       redirect_to add_sake_restaurant_path(@restaurant.id), notice: '続いて日本酒を追加してください。'
     else
