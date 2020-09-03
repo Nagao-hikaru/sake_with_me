@@ -1,4 +1,4 @@
-window.addEventListener('DomContentLoad', function(){
+window.addEventListener('load', function(){
 
 
   const open = document.getElementById('open')
