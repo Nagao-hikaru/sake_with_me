@@ -94,7 +94,7 @@
 
 .header-img{
   margin-top: 20px;
-  height: 580px;
+  height: 500px;
   width: 100%;
   background-image: url("/images/header4.png");
   background-size: cover;
@@ -103,7 +103,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 130px;
+  padding-top: 90px;
 }
 
 .img-rgb{
@@ -117,7 +117,7 @@
 
 .title-contents h2{
   color: white;
-  font-size: 8vh;
+  font-size: 7vh;
   margin-bottom: 20px;
 }
 
