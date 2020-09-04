@@ -14,15 +14,12 @@ window.addEventListener('load', function(){
       if (e.results[0].isFinal) {
           console.log(e)
           const autotext = e.results[0][0].transcript
-          document.getElementById("search").value = autotext;
+          document.getElementById("value").value = autotext;
       }
   }
 
   speech.onend = () =>{
     speech.stop()
-    const search = document.getElementById('search')
-    const div = document.createElement('div')
-    div.textContent = "音声を入力しました。"
-    search.appendChild(div)
+    
   };
 })
