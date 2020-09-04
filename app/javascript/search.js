@@ -14,7 +14,7 @@ window.addEventListener('load', function(){
       if (e.results[0].isFinal) {
           console.log(e)
           const autotext = e.results[0][0].transcript
-          document.getElementById("sake").value = autotext ;
+          document.getElementById("search").value = autotext;
       }
   }
 
