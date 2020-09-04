@@ -7,6 +7,10 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.includes(:user).order('created_at DESC')
     @search = Restaurant.ransack(params[:q])
     @results = @search.result.includes(:user).order('created_at DESC')
+    if @results.blank?
+      @results = Restaurant.includes(:user).order('created_at DESC')
+      flash[:alert] = '検索候補は見当たりませんでした。'
+    end
   end
 
   def new
