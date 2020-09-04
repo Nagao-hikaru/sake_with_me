@@ -81,7 +81,7 @@
         <div class="search-content">
           <%= search_form_for @search, url: restaurants_path do |f| %>
             <div class="search-field">
-              <%= f.search_field :name_cont, class: 'search-input', id: 'search', placeholder:'店名を入力してください' %>
+              <%= f.search_field :name_cont, class: 'search-input', id: 'value', placeholder:'店名を入力してください' %>
 
               <%= f.search_field :address_cont, class: 'search-input', placeholder: '住所を入力してください' %>
             </div>
@@ -97,7 +97,7 @@
           <% end %>
           <div id="search">
             <div>
-              <button id="start_btn">start</button>
+              <button id="start_btn" class="btn">音声入力</button>
             </div>
           </div>
         </div>
