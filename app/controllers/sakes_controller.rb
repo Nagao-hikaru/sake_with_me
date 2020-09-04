@@ -9,6 +9,7 @@ class SakesController < ApplicationController
     set_sake_column
     if @results.blank?
       @results = Sake.includes(:user).order('created_at DESC')
+      flash[:alert] = '検索候補は見当たりませんでした。'
     end
   end
 
