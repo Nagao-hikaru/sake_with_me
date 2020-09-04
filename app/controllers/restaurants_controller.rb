@@ -5,6 +5,8 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.includes(:user).order('created_at DESC')
+    @search = Restaurant.ransack(params[:q])
+    @results = @search.result.includes(:user).order('created_at DESC')
   end
 
   def new
