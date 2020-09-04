@@ -13,7 +13,7 @@ require('../main')
 require('../preview')
 require('../hamburger')
 require('../tab')
-require('../voice')
+require('../search')
 require("jquery")  
 
 // Uncomment to copy all static images under ../images to the output folder and reference
