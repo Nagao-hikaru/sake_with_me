@@ -4,9 +4,10 @@ class RestaurantsController < ApplicationController
   before_action :forbit_restaurant, only: [:edit, :update, :destroy]
 
   def index
-    @restaurants = Restaurant.includes(:user).order('created_at DESC')
+    # @restaurants = Restaurant.includes(:user).order('created_at DESC')
     @search = Restaurant.ransack(params[:q])
     @results = @search.result.includes(:user).order('created_at DESC')
+    set_restaurant_column
     if @results.blank?
       @results = Restaurant.includes(:user).order('created_at DESC')
       flash[:alert] = '検索候補は見当たりませんでした。'
@@ -69,4 +70,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     redirect_to restaurant_path(@restaurant.id), notice: '投稿者のみ編集,削除できます。' if current_user != @restaurant.user
   end
+
+  def set_restaurant_column
+    @restaurant_beer = Restaurant.select("beer").distinct
+  end
+
 end
