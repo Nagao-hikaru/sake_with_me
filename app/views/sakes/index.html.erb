@@ -1,8 +1,56 @@
 
     <%= render partial: "shared/header3" %>
     <main>
+      <%= search_form_for @search, url: sakes_path do |f| %>
+  <%= f.label :name_cont, "商品名" %>
+  <%= f.search_field :name_cont, id: 'sake' %>
+
+  <%= f.label :company_eq, '酒蔵'%>
+  <%= f.collection_select :company_eq, @sake_company, :company, :company,  include_blank: '指定なし' %>
+
+   <%= f.label :type_id_eq, "種類", class: 'form-text'%>
+        <%= f.collection_select(:type_id_eq, Type.all, :id, :name, {}, {class: 'input-default'}) %>
+
+  <br>
+  <%= f.submit '検索' %>
+  
+<% end %>
+<div>
+    <h2 style="text-align: center;">音声認識</h2>
+    <div style="margin: 0px 47%;">
+        <button id="start_btn" style="text-align: center; height: 50px; width: 100px;">start</button>
+    </div>
+</div>
+<script>
+    const speech = new webkitSpeechRecognition();
+    speech.lang = 'ja-JP';
+
+    const start_btn = document.getElementById('start_btn');
+    // const end_btn = document.getElementById('end_btn');
+
+    start_btn.addEventListener('click', function () {
+        // 音声認識をスタート
+        speech.start();
+    });
+
+    //音声自動文字起こし機能
+    speech.onresult = function (e) {
+        speech.stop();
+        if (e.results[0].isFinal) {
+            console.log(e)
+            const autotext = e.results[0][0].transcript
+            document.getElementById("sake").value = autotext ;
+        }
+    }
+
+    speech.onend = () =>
+    {
+        speech.stop()
+    };
+
+</script>
       <ul class="main-body">
-        <% @sakes.each do |sake|%>
+        <% @results.each do |sake|%>
           <li class="restaurant-list">
             <%= link_to sake_path(sake), class: 'detail-restaurant' do %>
               <div class="restaurant-name">
