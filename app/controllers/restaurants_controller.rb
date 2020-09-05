@@ -2,9 +2,19 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destory]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :google]
   before_action :forbit_restaurant, only: [:edit, :update, :destroy]
+  before_action :set_restaurant_column, only: [:index]
 
   def index
-    @restaurants = Restaurant.includes(:user).order('created_at DESC')
+    if user_signed_in?
+    @user = current_user.id
+    end
+    @search = Restaurant.ransack(params[:q])
+    @results = @search.result.includes(:user).order('created_at DESC')
+    set_restaurant_column
+    if @results.blank?
+      @results = Restaurant.includes(:user).order('created_at DESC')
+      flash[:alert] = '検索候補は見当たりませんでした。'
+    end
   end
 
   def new
@@ -63,4 +73,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     redirect_to restaurant_path(@restaurant.id), notice: '投稿者のみ編集,削除できます。' if current_user != @restaurant.user
   end
+
+  def set_restaurant_column
+    @restaurant_beer = Restaurant.select("beer").distinct
+  end
+
 end

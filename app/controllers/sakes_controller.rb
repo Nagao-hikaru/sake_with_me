@@ -4,7 +4,13 @@ class SakesController < ApplicationController
   before_action :forbit_sake, only: [:edit, :update, :destroy]
 
   def index
-    @sakes = Sake.includes(:user).order('created_at DESC')
+    @search = Sake.ransack(params[:q])
+    @results = @search.result.includes(:user).order('created_at DESC')
+    set_sake_column
+    if @results.blank?
+      @results = Sake.includes(:user).order('created_at DESC')
+      flash[:alert] = '検索候補は見当たりませんでした。'
+    end
   end
 
   def new
@@ -57,5 +63,9 @@ class SakesController < ApplicationController
   def forbit_sake
     @sake = Sake.find(params[:id])
     redirect_to sake_path(@sake.id), notice: '投稿者のみ編集削除できます。' if current_user != @sake.user
+  end
+
+  def set_sake_column
+    @sake_company = Sake.select("company").distinct
   end
 end

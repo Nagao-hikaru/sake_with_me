@@ -118,14 +118,16 @@
 .title-contents h2{
   color: white;
   font-size: 7vh;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  padding-left: 30px;
 }
 
 .title-explain{
   color: white;
   font-size: 2.5vh;
   line-height: 40px;
-  margin-top: 20px;
+  margin-top: 25px;
+  padding-left: 40px;
 }
 
 .overlay{

@@ -1,0 +1,84 @@
+.search{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(241, 238, 238);
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search p {
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.search-content{
+  /* border: 1px solid orange; */
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.restaurant_search{
+  margin: 30px;
+  width: 100%;
+}
+
+.sake_search{
+  margin: 30px;
+  width: 100%;
+}
+
+.search-field{
+  display: flex;
+}
+
+.search-input{
+  display: block;
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 15px;
+}
+
+.select-wrap{
+  height: 70%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.voice{
+  font-size: 10px;
+}
+
+#ransack{
+  font-size: 16px;
+}
+
+#search{
+  position: absolute;
+  bottom: 9px;
+  right: 20px;
+}
+
+#start_btn{
+  font-size: 16px;
+}
+
+.btn{
+  cursor: pointer;
+  border: none;
+  background: #3879D9;
+  color: #fff;
+  outline : none;
+
+}

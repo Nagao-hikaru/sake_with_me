@@ -1,8 +1,33 @@
 
     <%= render partial: "shared/header3" %>
     <main>
+      <div class="search">
+        <p>日本酒検索</p>
+        <div class="search-content">
+          <%= search_form_for @search, url: sakes_path do |f| %>
+            <div class="search-field">
+              <%= f.search_field :name_cont, class: 'search-input', id: 'value', placeholder:'日本酒名を入力してください' %>
+
+              <%= f.search_field :company_cont, class: 'search-input', placeholder: '酒蔵を入力してください' %>
+            </div>
+            <div class="select-wrap">
+              <%= f.collection_select(:type_id_eq, Type.all, :id, :name, {include_blank: '酒の種類'}) %>
+
+              <%= button_tag( class: "btn") do %>
+                <span class="material-icons" id="ransack">検索　search</span>
+              <% end %>
+            </div>
+
+          <% end %>
+          <div id="search">
+            <div>
+              <button id="start_btn" class="btn">音声入力</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <ul class="main-body">
-        <% @sakes.each do |sake|%>
+        <% @results.each do |sake|%>
           <li class="restaurant-list">
             <%= link_to sake_path(sake), class: 'detail-restaurant' do %>
               <div class="restaurant-name">
