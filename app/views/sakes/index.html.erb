@@ -1,25 +1,31 @@
 
     <%= render partial: "shared/header3" %>
     <main>
-      <%= search_form_for @search, name: 'search', url: sakes_path do |f| %>
-  <%= f.label :name_cont, "商品名" %>
-  <%= f.search_field :name_cont, id: 'sake' %>
+      <div class="search">
+        <p>日本酒検索</p>
+        <div class="search-content">
+          <%= search_form_for @search, url: sakes_path do |f| %>
+            <div class="search-field">
+              <%= f.search_field :name_cont, class: 'search-input', id: 'value', placeholder:'日本酒名を入力してください' %>
 
-  <%= f.label :company_eq, '酒蔵'%>
-  <%= f.collection_select :company_eq, @sake_company, :company, :company,  include_blank: '指定なし' %>
+              <%= f.search_field :company_cont, class: 'search-input', placeholder: '酒蔵を入力してください' %>
+            </div>
+            <div class="select-wrap">
+              <%= f.collection_select(:type_id_eq, Type.all, :id, :name, {include_blank: '酒の種類'}) %>
 
-  <%= f.label :type_id_gt, "種類", class: 'form-text'%>
-    <%= f.collection_select(:type_id_gt, Type.all, :id, :name, {include_blank: '指定なし'}, {class: 'input-default'}) %>
-  <br>
-  <%= f.submit '検索', id: 'ransack' %>
-  
-<% end %>
-<div id="search">
-    <h2 style="text-align: center;">音声認識</h2>
-    <div style="margin: 0px 47%;">
-        <button id="start_btn" style="text-align: center; height: 50px; width: 100px;">start</button>
-    </div>
-</div>
+              <%= button_tag( class: "btn") do %>
+                <span class="material-icons" id="ransack">検索　search</span>
+              <% end %>
+            </div>
+
+          <% end %>
+          <div id="search">
+            <div>
+              <button id="start_btn" class="btn">音声入力</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <ul class="main-body">
         <% @results.each do |sake|%>
           <li class="restaurant-list">
