@@ -1,6 +1,6 @@
 <h1>日本酒いいよね</h1>
 
-<%= form_with model: [@restaurant, @sake_restaurant], url: add_create_sake_restaurant_path, method: :post, class: 'devise-content', local: true do |f|%>
+<%= form_with model: [@restaurant, @sake_restaurant], url: add_create_sake_restaurant_path, method: :post, class: 'add-content', local: true do |f|%>
 
   <%= render "shared/error_messages", model: f.object %>
 
