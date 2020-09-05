@@ -25,6 +25,12 @@
   width: 100%;
 }
 
+.sake_search{
+  height: 30%;
+  margin: 30px;
+  width: 100%;
+}
+
 .search-field{
   display: flex;
 }
@@ -38,6 +44,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  font-size: 15px;
 }
 
 .select-wrap{
