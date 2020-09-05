@@ -1,6 +1,12 @@
 main{
+  /* height: calc(100% - 780px);
+  margin: 0 auto; */
   height: calc(100% - 780px);
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .main-body{

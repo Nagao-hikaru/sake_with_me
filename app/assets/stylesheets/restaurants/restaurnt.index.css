@@ -1,32 +1,32 @@
 .search{
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: rgb(241, 238, 238);
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-top: 100px;
+}
+
+.search p {
+  padding-top: 10px;
+  font-weight: bold;
 }
 
 .search-content{
   /* border: 1px solid orange; */
-  width: 120%;
+  width: 100%;
   display: flex;
   position: relative;
 }
 
 .restaurant_search{
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
-  height: 30%;
   margin: 30px;
   width: 100%;
 }
 
 .sake_search{
-  height: 30%;
   margin: 30px;
   width: 100%;
 }
@@ -48,7 +48,7 @@
 }
 
 .select-wrap{
-  height: 100%;
+  height: 70%;
   position: relative;
   width: 100%;
   display: flex;
