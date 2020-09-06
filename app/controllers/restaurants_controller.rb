@@ -5,9 +5,7 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant_column, only: [:index]
 
   def index
-    if user_signed_in?
-    @user = current_user.id
-    end
+    @user = current_user.id if user_signed_in?
     @search = Restaurant.ransack(params[:q])
     @results = @search.result.includes(:user).order('created_at DESC')
     set_restaurant_column
@@ -75,7 +73,6 @@ class RestaurantsController < ApplicationController
   end
 
   def set_restaurant_column
-    @restaurant_beer = Restaurant.select("beer").distinct
+    @restaurant_beer = Restaurant.select('beer').distinct
   end
-
 end
