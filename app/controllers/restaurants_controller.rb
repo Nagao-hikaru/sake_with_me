@@ -24,7 +24,6 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to add_sake_restaurant_path(@restaurant.id), notice: '続いて日本酒を追加してください。'
     else
-      binding.pry
       flash[:alert] = '全項目記述してください'
       render :new
     end
