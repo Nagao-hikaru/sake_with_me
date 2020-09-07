@@ -66,6 +66,6 @@ class SakesController < ApplicationController
   end
 
   def set_sake_column
-    @sake_company = Sake.select("company").distinct
+    @sake_company = Sake.select('company').distinct
   end
 end
