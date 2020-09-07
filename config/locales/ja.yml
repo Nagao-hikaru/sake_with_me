@@ -14,7 +14,7 @@ ja:
         image: 画像
         beer: 生ビール
         city: 住所
-        address: 番地
+        address: 住所
         genre_id: 店の業態
         prefecture_id: 都道府県
       sake_restaurant:
