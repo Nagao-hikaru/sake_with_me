@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 2020_09_08_075045) do
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_messages_on_restaurant_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_075045) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "likes", "restaurants"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "restaurants"
   add_foreign_key "messages", "users"
   add_foreign_key "restaurants", "users"
   add_foreign_key "sake_restaurants", "restaurants"
