@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'google'
     end
   end
+  resources :messages, only: [:create]
   resources :sakes
   resources :sake_restaurants do
     member do
