@@ -27,10 +27,13 @@ class RestaurantsController < ApplicationController
       flash[:alert] = '全項目記述してください'
       render :new
     end
+    @message = Message.new(text: params[:message][:text])
   end
 
   def show
     @like = Like.new
+    @messages = Message.includes(:user)
+    @message = Message.new
   end
 
   def edit

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :restaurants  do
     post 'like' => 'likes#create'
     delete '/like' => 'likes#destroy'
+    post 'message' => 'messages#create'
     member do
       get 'google'
     end

@@ -13,7 +13,6 @@
               </div>
               <% end %>
           </div>
-
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -21,7 +20,7 @@
       </div>
         <script src="swiper.js"></script>
         <script>
-          var swiper = new Swiper('.swiper-container', {
+          let swiper = new Swiper('.swiper-container', {
             navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -134,7 +133,22 @@
             </div>
           <% end %>
         </div>
-    </div>
+        <h3>コメント一覧: コメント数<%= @restaurant.messages.count%></h3>
+        <div id='messages'>
+          <% @restaurant.messages.reverse_each do |message| %>
+            <div class="message-content">
+            <p id="message-text"><%= message.text %></p>
+            </div>
+          <% end %>
+        </div>
+        <% if user_signed_in?%>
+          <%= form_with model: @message, url: restaurant_message_path(@restaurant), class:'message-form' do |f| %>
+            <%= f.text_field :text, class: 'search-input' %>
+            <%= f.submit '送信', class: 'btn' %>
+          <% end %>
+        <% end %>
+      </div>
+      
   </div>
 </main>
 

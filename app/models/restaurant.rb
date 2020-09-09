@@ -8,6 +8,8 @@ class Restaurant < ApplicationRecord
   has_many :sakes, through: :sake_restaurants, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes, dependent: :destroy
+  has_many :messages
+  has_many :message_users, through: :messages, source: :message
   geocoded_by :address
   after_validation :geocode
 

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :restaurants
   has_many :sakes
+  has_many :messages
+  has_many :message_restaurants, through: :messages, source: :message
   has_many :sake_restaurants
   has_many :likes, dependent: :destroy
   has_many :like_restaurants, through: :likes, source: :restaurant

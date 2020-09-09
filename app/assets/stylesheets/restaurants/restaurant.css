@@ -516,3 +516,33 @@ main{
     color: #e4e4e4;
   }
  }
+
+ #messages {
+   border: 1px solid black;
+   width: 70%;
+   overflow: scroll;
+   height: 150px;
+   padding: 30px;
+   background-color: rgb(241, 238, 238);
+   border-radius: 5px;
+   border: 1px solid #ccc;
+
+ }
+
+ .message-content{
+   display: flex;
+   margin-bottom: 10px;
+ }
+
+ .message-content p{
+   padding-right: 10px;
+ }
+
+ #message-text{
+   margin-left: 20px;
+ }
+
+ .message-form{
+   display: flex;
+   margin-top: 15px;
+ }
