@@ -133,18 +133,20 @@
             </div>
           <% end %>
         </div>
-        <h3>mini_talk_app</h3>
-        <% if user_signed_in?%>
-          <%= form_with model: @message, url: restaurant_message_path(@restaurant) do |f| %>
-            <%= f.text_field :text %>
-            <%= f.submit '送信' %>
-          <% end %>
-        <% end %>
+        <h3>コメント一覧: コメント数<%= @restaurant.messages.count%></h3>
         <div id='messages'>
           <% @restaurant.messages.reverse_each do |message| %>
-              <p><%= message.text %></p>
+            <div class="message-content">
+            <p id="message-text"><%= message.text %></p>
+            </div>
           <% end %>
         </div>
+        <% if user_signed_in?%>
+          <%= form_with model: @message, url: restaurant_message_path(@restaurant), class:'message-form' do |f| %>
+            <%= f.text_field :text, class: 'search-input' %>
+            <%= f.submit '送信', class: 'btn' %>
+          <% end %>
+        <% end %>
       </div>
       
   </div>
