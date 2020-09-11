@@ -4,9 +4,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @restaurant.messages.new(message_params)
-    if @message.save
-      ActionCable.server.broadcast 'message_channel', content: @message
-    end
+    ActionCable.server.broadcast 'message_channel', content: @message if @message.save
   end
 
   private

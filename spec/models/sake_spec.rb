@@ -9,7 +9,7 @@ RSpec.describe Sake, type: :model do
   describe '日本酒投稿' do
     context '日本酒投稿がうまくいく時' do
       it '全ての項目を正しく記入していれば登録できる' do
-        expect(@sake).to be_valid 
+        expect(@sake).to be_valid
       end
       it '使用米を記入しなくても登録できる' do
         @sake.rice = nil
@@ -28,7 +28,7 @@ RSpec.describe Sake, type: :model do
         expect(@sake).to be_valid
       end
       it 'アルコール度数は文字列でもint型になり登録できる。' do
-        @sake.degree = "19"
+        @sake.degree = '19'
         expect(@sake).to be_valid
       end
     end
@@ -37,7 +37,7 @@ RSpec.describe Sake, type: :model do
       it '日本酒名が空だと登録できない' do
         @sake.name = nil
         @sake.valid?
-        expect(@sake.errors.full_messages).to include("日本酒名を入力してください")
+        expect(@sake.errors.full_messages).to include('日本酒名を入力してください')
       end
       it '画像が挿入されていないと登録できない' do
         @sake.image = nil
@@ -50,7 +50,7 @@ RSpec.describe Sake, type: :model do
         expect(@sake.errors.full_messages).to include('精米歩合を入力してください')
       end
       it '精米歩合の最後に%がつかなければ登録できない' do
-        @sake.rice_rate = "20"
+        @sake.rice_rate = '20'
         @sake.valid?
         expect(@sake.errors.full_messages).to include('精米歩合は最後に%を記入してください')
       end

@@ -22,12 +22,12 @@ RSpec.describe Restaurant, type: :model do
       it '飲食店名が空だと登録できない' do
         @restaurant.name = nil
         @restaurant.valid?
-        expect(@restaurant.errors.full_messages).to include("飲食店名を入力してください")
+        expect(@restaurant.errors.full_messages).to include('飲食店名を入力してください')
       end
       it '生ビールが空だと登録できない' do
         @restaurant.beer = nil
         @restaurant.valid?
-        expect(@restaurant.errors.full_messages).to include("生ビールを入力してください")
+        expect(@restaurant.errors.full_messages).to include('生ビールを入力してください')
       end
       it 'ジャンルを選択しないと登録できない' do
         @restaurant.genre_id = 1
@@ -45,8 +45,5 @@ RSpec.describe Restaurant, type: :model do
         expect(@restaurant.errors.full_messages).to include('住所を入力してください')
       end
     end
-
-
-
   end
 end
