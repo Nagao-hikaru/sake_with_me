@@ -49,7 +49,7 @@
 ## 使用方法
 
 - ログイン
-上記テストアカウントを入力してログインしてください。
+  - 上記テストアカウントを入力してログインしてください。
 <br>
 <br>
 
@@ -72,7 +72,7 @@
 
 - 現在位置から店のルート表示
 
-  - 飲食店一覧からリストをクリックすると飲食店詳細ページに遷移します。スクロールしていただくと**現在位置から店の行き方を知りたい方はこちら**のリンクがあるのでクリックしていただくと現在一から店のルートを表示します。
+  - 飲食店一覧からリストをクリックすると飲食店詳細ページに遷移します。スクロールしていただくと**現在位置から店の行き方を知りたい方はこちら**のリンクがあるのでクリックしていただくと現在位置から店のルートを表示します。
 
 <br>
 <br>
@@ -80,6 +80,80 @@
 
 ## 洗い出した要件
 
+- ヘッダー
+  - ログイン時ログアウトボタンがある。
+  - ログインしていない場合、新規登録、ログインボタンがある。
+  - 日本酒一覧のボタンがある。
+  - 飲食店新規投稿のボタンがある
+  - 日本酒新規投稿のボタンがある。
+  - 美味しかった日本酒投稿のボタンがある。
+  - マイページのボタンがある。
+  - widthが700以下になったらheaderがハンバーガーメニューになる。
+  <br>
+- 新規登録/ログインページ
+  - 新規登録ページには名前、メールアドレス、パスワードを入力できるフォームがあり<br>送信ボタンがある。
+  - 新規登録ページにはトップページ遷移ボタンがある。
+  - 新規登録ページには確認メールが届かない場合の再送信するボタンがある。
+  - 新規登録ページにはログインボタンがある。
+  <br>
+  - ログインページにはメールアドレス、パスワード入力できるフォームがあり送信ボタンがある。
+  - ログイン画面にはパスワード変更のボタンがある。
+  - ログイン画面には確認メールが届かない場合の再送信ボタンがある。
+  - ログイン画面にはトップページ遷移ボタンがある。
+  <br>
+- 飲食店一覧、日本酒一覧ページ
+  - 飲食店一覧ページには新規投稿された飲食店のリストがある。
+  - 飲食店一覧ページには条件検索できる枠がある。
+  - 飲食店一覧ページには音声入力できるボタンがある。
+  - 日本酒一覧ページには新規投稿された日本酒のリストがある。
+  - 日本酒一覧ページには条件検索できる枠がある。
+  - 日本酒一覧ページには音声入力できるボタンがある。
+
+  <br>
+- 飲食店新規投稿ページ
+  - 複数枚画像選択、店名、生ビール、ジャンル、都道府県、住所を<br>入力できるフォームがあり、送信ボタンがある。
+  - トップページに遷移するボタンがある。
+  - 入力内容が空だとエラーメッセージが表示される。
+
+  <br>
+- 日本酒新規投稿ページ
+  - 画像選択、、日本酒名、精米歩合、日本酒度、種類、アルコール度数、酒蔵、使用コメが入力できる。
+  - トップページに遷移するボタンがある。
+  - 入力内容が空だとエラーメッセージが表示される。
+  - 精米歩合は文末に%をつけないとエラーメッセージが表示される。
+  - 日本酒度は文頭に+か-をつけないとエラーメッセージが表示される。
+  - アルコール度数は21度以下で入力しないとエラーメッセージが表示される。
+
+  <br>
+- 美味しかった日本酒投稿ページ
+  - 飲食店を検索して候補を絞ることができる。
+  - トップページの遷移ボタンがある。
+  - 検索先のページで検索候補がなければもう一度検索するボタンがある。
+  - 検索先のページで検索候補があれば日本酒を選択できるプルダウンリストがある。
+  - 検索先のページではトップページ遷移ボタンがある。
+
+  <br>
+- マイページ
+  - ユーザーが投稿した飲食店リストがある。
+  - ユーザーが投稿した日本酒リストがある。
+  - ユーザーがいいねした飲食店リストがある。
+
+  <br>
+- 飲食店詳細ページ
+  - 投稿した複数枚の画像がスライドショーで見れる。
+  - 飲食店編集、削除ボタンがある。
+  - 投稿内容が記されたテーブルがあり投稿者の部分はリンクになっている。
+  - お気に入りできるハートアイコンがある。
+  - 店の住所がわかるgoogle mapが表示されている。
+  - 現在位置から店のルートを示すページ遷移ボタンがある。
+  - ここで飲める日本酒一覧に美味しかった日本酒投稿された日本酒リストがある。
+
+  <br>
+- 日本酒詳細ページ
+  - 投稿した日本酒の画像がある。
+  - 日本酒編集、削除ボタンがある。
+  - 投稿内容が記されたテーブルがある。
+  - このお酒を飲める店はこちら一覧に紐付けされている飲食店の一覧がある。
 <br>
 <br>
 <br>
@@ -88,9 +162,15 @@
 <br>
 
 ### ログイン機能
-- 入力フォームで記入したeメールにととメールアドレス確認メールが届きリンクをクリックすると登録が完了します。
+- 入力フォームで記入したメールアドレスにメールアドレス確認メールが届き<br>リンクをクリックすると登録が完了します。
+<div align="center">
 
 <img width="379" alt="mail" src="https://user-images.githubusercontent.com/68269509/92732256-298ba500-f3b1-11ea-8b63-fc85f301628a.png">
+
+</div>
+
+
+
 <br>
 <br>
 <br>
@@ -101,10 +181,18 @@
 <br>
 <br>
 
+<div align="center">
+<img width="505" alt="faff58ed78342ba1b86e0e08e9e57a3c" src="https://user-images.githubusercontent.com/68269509/92986243-3533b480-f4f4-11ea-8e8f-5da90aa3fcfa.png">
+</div>
+<br>
+<br>
+<br>
 
-![restaurant](https://user-images.githubusercontent.com/68269509/92736354-2d212b00-f3b5-11ea-9169-40b14aaa744d.jpg)
+<div align="center">
 
 <img width="302" alt="restaurant2" src="https://user-images.githubusercontent.com/68269509/92736363-2eeaee80-f3b5-11ea-830d-9c674b85753b.png">
+
+</div>
 
 <br>
 <br>
@@ -116,10 +204,18 @@
 <br>
 <br>
 <br>
+<div align="center">
 
-![sake](https://user-images.githubusercontent.com/68269509/92737013-bcc6d980-f3b5-11ea-80f5-d8044feb7be1.jpg)
+<img width="494" alt="sake-form" src="https://user-images.githubusercontent.com/68269509/92986148-ba6a9980-f4f3-11ea-9246-11fb291d6bdc.png">
 
+</div>
+<br>
+<br>
+<br>
+
+<div align="center">
 <img width="302" alt="sake2" src="https://user-images.githubusercontent.com/68269509/92737435-16c79f00-f3b6-11ea-9268-f35b20ad92aa.png">
+</div>
 <br>
 <br>
 <br>
@@ -131,11 +227,12 @@
 
 <br>
 <br>
-<br>
+<div align="center">
 
 ![sakes](https://user-images.githubusercontent.com/68269509/92739090-7d00f180-f3b7-11ea-8ba3-2f73c02ccac5.gif)
 
-<br>
+</div>
+
 <br>
 <br>
 
@@ -145,8 +242,6 @@
 また、現在位置から店の行き方を知りたい方はこちらをクリックすると現在一から店までのルートを表示してくれます。
 <br>
 <br>
-<br>
-<br>
 
 ### いいね機能
 
@@ -154,13 +249,20 @@
 <br>
 <br>
 <br>
+<div align="center">
 
-![favorite](https://user-images.githubusercontent.com/68269509/92834829-73a67200-f415-11ea-97e0-38531f1ec147.gif)
+![Animated GIF-downsized (1)](https://user-images.githubusercontent.com/68269509/92986457-f7d02680-f4f5-11ea-9adc-a8fef06bc507.gif)
+
+</div>
 <br>
 <br>
 <br>
 
-![ufav](https://user-images.githubusercontent.com/68269509/92836663-a2254c80-f417-11ea-88f1-a7cc62555684.gif)
+<div align="center">
+
+![Animated GIF-downsized](https://user-images.githubusercontent.com/68269509/92986384-4204d800-f4f5-11ea-9e4d-45f9d196c78b.gif)
+
+</div>
 
 <br>
 <br>
@@ -170,9 +272,8 @@
 
 - 日本酒、飲食店一覧にそれぞれ複数条件を指定して検索することができます。また、条件に合わなければflashメッセージが表示され全listが表示されます。
 <div style="display: flex;">
-<img width="302" alt="ransackrestaurant" src="https://user-images.githubusercontent.com/68269509/92837738-e82ee000-f418-11ea-8b09-60ffe78d0fdb.png">
 
-<img width="302" alt="ransacksake" src="https://user-images.githubusercontent.com/68269509/92838425-b9653980-f419-11ea-936e-0995a6b6aeee.png">
+
 </div>
 
 <br>
@@ -183,6 +284,14 @@
 
 - web Speach Apiを使用して音声で入力された内容を飲食店検索、日本酒検索のフリーワードに直接<br>
 入力されます。
+<br>
+<br>
+
+<div align="center">
+
+![Animated GIF-downsized (3)](https://user-images.githubusercontent.com/68269509/92986641-6661b400-f4f7-11ea-900e-c3f304fd462a.gif)
+
+</div>
 
 <br>
 <br>
@@ -200,7 +309,11 @@
 <br>
 <br>
 <br>
+<div align="center">
+
 <img width="500" alt="こめんと" src="https://user-images.githubusercontent.com/68269509/92840481-17931c00-f41c-11ea-88aa-50c7eee35d58.png">
+
+</div>
 
 <br>
 <br>
@@ -215,8 +328,11 @@
 
 <br>
 <br>
+<div align="center">
 
-![つけたいファイル名](https://user-images.githubusercontent.com/68269509/92843628-ea486d00-f41f-11ea-805a-fe27c3d1e4bf.gif)
+![Animated GIF-downsized (2)](https://user-images.githubusercontent.com/68269509/92986553-c86de980-f4f6-11ea-9215-28ff73ee723b.gif)
+
+</div>
 
 
 
@@ -230,9 +346,14 @@
 
 
 ## データベース設計
-
+<br>
+<br>
+<div align="center">
   <img width="993" alt="er" src="https://user-images.githubusercontent.com/68269509/92833322-b10a0000-f413-11ea-8959-268336d1b29d.png">
 
+  </div>
+<br>
+<br>
 
 
 ## ローカルでの動作方法
