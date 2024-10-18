@@ -31,6 +31,7 @@
 <br>
 
 ## App URL
+<b>現在は、公開を停止しております。
 ・https://sake-with-me.herokuapp.com/
 <br>
 <br>
